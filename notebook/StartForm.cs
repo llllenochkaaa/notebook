@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace notebook
 {
-    public partial class Form1 : Form
+    public partial class StartForm : Form
     {
-        public Form1()
+        public StartForm()
         {
             InitializeComponent();
         }
@@ -20,6 +20,13 @@ namespace notebook
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            MainForm mainform = new MainForm();
+            this.Hide();
+            mainform.Show();
         }
     }
 }
