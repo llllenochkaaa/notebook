@@ -40,7 +40,7 @@
             this.MyFriendsButton.BackColor = System.Drawing.Color.Violet;
             this.MyFriendsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MyFriendsButton.ForeColor = System.Drawing.Color.Maroon;
-            this.MyFriendsButton.Location = new System.Drawing.Point(246, 49);
+            this.MyFriendsButton.Location = new System.Drawing.Point(273, 49);
             this.MyFriendsButton.Name = "MyFriendsButton";
             this.MyFriendsButton.Size = new System.Drawing.Size(254, 84);
             this.MyFriendsButton.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.FindFriendButton.BackColor = System.Drawing.Color.Violet;
             this.FindFriendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FindFriendButton.ForeColor = System.Drawing.Color.Maroon;
-            this.FindFriendButton.Location = new System.Drawing.Point(246, 184);
+            this.FindFriendButton.Location = new System.Drawing.Point(273, 184);
             this.FindFriendButton.Name = "FindFriendButton";
             this.FindFriendButton.Size = new System.Drawing.Size(254, 84);
             this.FindFriendButton.TabIndex = 1;
@@ -64,7 +64,7 @@
             this.AddFriendButton.BackColor = System.Drawing.Color.Violet;
             this.AddFriendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddFriendButton.ForeColor = System.Drawing.Color.Maroon;
-            this.AddFriendButton.Location = new System.Drawing.Point(246, 316);
+            this.AddFriendButton.Location = new System.Drawing.Point(273, 316);
             this.AddFriendButton.Name = "AddFriendButton";
             this.AddFriendButton.Size = new System.Drawing.Size(254, 84);
             this.AddFriendButton.TabIndex = 2;
@@ -74,10 +74,11 @@
             // CurrentData
             // 
             this.CurrentData.BackColor = System.Drawing.Color.LightPink;
+            this.CurrentData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CurrentData.ForeColor = System.Drawing.Color.Black;
-            this.CurrentData.Location = new System.Drawing.Point(665, 406);
+            this.CurrentData.Location = new System.Drawing.Point(681, 411);
             this.CurrentData.Name = "CurrentData";
-            this.CurrentData.Size = new System.Drawing.Size(81, 22);
+            this.CurrentData.Size = new System.Drawing.Size(107, 27);
             this.CurrentData.TabIndex = 3;
             // 
             // BackButton
