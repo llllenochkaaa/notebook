@@ -46,7 +46,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.BackColor = System.Drawing.Color.Violet;
+            this.StartButton.BackColor = System.Drawing.Color.Pink;
             this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartButton.ForeColor = System.Drawing.Color.Maroon;
             this.StartButton.Location = new System.Drawing.Point(262, 131);
@@ -59,7 +59,7 @@
             // 
             // CloseButton
             // 
-            this.CloseButton.BackColor = System.Drawing.Color.Violet;
+            this.CloseButton.BackColor = System.Drawing.Color.Pink;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CloseButton.ForeColor = System.Drawing.Color.Maroon;
             this.CloseButton.Location = new System.Drawing.Point(262, 270);
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.HotPink;
+            this.BackColor = System.Drawing.Color.Plum;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.StartButton);

@@ -31,13 +31,13 @@
             this.MyFriendsButton = new System.Windows.Forms.Button();
             this.FindFriendButton = new System.Windows.Forms.Button();
             this.AddFriendButton = new System.Windows.Forms.Button();
-            this.CurrentData = new System.Windows.Forms.TextBox();
             this.BackButton = new System.Windows.Forms.Button();
+            this.CurrentData = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // MyFriendsButton
             // 
-            this.MyFriendsButton.BackColor = System.Drawing.Color.Violet;
+            this.MyFriendsButton.BackColor = System.Drawing.Color.Pink;
             this.MyFriendsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MyFriendsButton.ForeColor = System.Drawing.Color.Maroon;
             this.MyFriendsButton.Location = new System.Drawing.Point(273, 49);
@@ -49,7 +49,7 @@
             // 
             // FindFriendButton
             // 
-            this.FindFriendButton.BackColor = System.Drawing.Color.Violet;
+            this.FindFriendButton.BackColor = System.Drawing.Color.Pink;
             this.FindFriendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FindFriendButton.ForeColor = System.Drawing.Color.Maroon;
             this.FindFriendButton.Location = new System.Drawing.Point(273, 184);
@@ -61,7 +61,7 @@
             // 
             // AddFriendButton
             // 
-            this.AddFriendButton.BackColor = System.Drawing.Color.Violet;
+            this.AddFriendButton.BackColor = System.Drawing.Color.Pink;
             this.AddFriendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddFriendButton.ForeColor = System.Drawing.Color.Maroon;
             this.AddFriendButton.Location = new System.Drawing.Point(273, 316);
@@ -70,22 +70,13 @@
             this.AddFriendButton.TabIndex = 2;
             this.AddFriendButton.Text = "Додати друга";
             this.AddFriendButton.UseVisualStyleBackColor = false;
-            // 
-            // CurrentData
-            // 
-            this.CurrentData.BackColor = System.Drawing.Color.LightPink;
-            this.CurrentData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CurrentData.ForeColor = System.Drawing.Color.Black;
-            this.CurrentData.Location = new System.Drawing.Point(681, 411);
-            this.CurrentData.Name = "CurrentData";
-            this.CurrentData.Size = new System.Drawing.Size(107, 27);
-            this.CurrentData.TabIndex = 3;
+            this.AddFriendButton.Click += new System.EventHandler(this.AddFriendButton_Click);
             // 
             // BackButton
             // 
-            this.BackButton.BackColor = System.Drawing.Color.LightPink;
+            this.BackButton.BackColor = System.Drawing.Color.PaleVioletRed;
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BackButton.ForeColor = System.Drawing.Color.Purple;
+            this.BackButton.ForeColor = System.Drawing.Color.Maroon;
             this.BackButton.Location = new System.Drawing.Point(12, 12);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(159, 37);
@@ -94,14 +85,23 @@
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // CurrentData
+            // 
+            this.CurrentData.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.CurrentData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CurrentData.Location = new System.Drawing.Point(685, 410);
+            this.CurrentData.Name = "CurrentData";
+            this.CurrentData.Size = new System.Drawing.Size(103, 28);
+            this.CurrentData.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.HotPink;
+            this.BackColor = System.Drawing.Color.Plum;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.CurrentData);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.AddFriendButton);
             this.Controls.Add(this.FindFriendButton);
             this.Controls.Add(this.MyFriendsButton);
@@ -118,7 +118,7 @@
         private System.Windows.Forms.Button MyFriendsButton;
         private System.Windows.Forms.Button FindFriendButton;
         private System.Windows.Forms.Button AddFriendButton;
-        private System.Windows.Forms.TextBox CurrentData;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.TextBox CurrentData;
     }
 }

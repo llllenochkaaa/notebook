@@ -32,5 +32,12 @@ namespace notebook
             this.Hide();
             startform.Show();
         }
+
+        private void AddFriendButton_Click(object sender, EventArgs e)
+        {
+            AddFriend addfriend = new AddFriend();
+            this.Hide();
+            addfriend.Show();
+        }
     }
 }
