@@ -38,7 +38,9 @@
             // MyFriendsButton
             // 
             this.MyFriendsButton.BackColor = System.Drawing.Color.Pink;
-            this.MyFriendsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MyFriendsButton.FlatAppearance.BorderSize = 2;
+            this.MyFriendsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MyFriendsButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MyFriendsButton.ForeColor = System.Drawing.Color.Maroon;
             this.MyFriendsButton.Location = new System.Drawing.Point(273, 49);
             this.MyFriendsButton.Name = "MyFriendsButton";
@@ -46,11 +48,14 @@
             this.MyFriendsButton.TabIndex = 0;
             this.MyFriendsButton.Text = "Мої друзі";
             this.MyFriendsButton.UseVisualStyleBackColor = false;
+            this.MyFriendsButton.Click += new System.EventHandler(this.MyFriendsButton_Click);
             // 
             // FindFriendButton
             // 
             this.FindFriendButton.BackColor = System.Drawing.Color.Pink;
-            this.FindFriendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FindFriendButton.FlatAppearance.BorderSize = 2;
+            this.FindFriendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindFriendButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FindFriendButton.ForeColor = System.Drawing.Color.Maroon;
             this.FindFriendButton.Location = new System.Drawing.Point(273, 184);
             this.FindFriendButton.Name = "FindFriendButton";
@@ -58,11 +63,14 @@
             this.FindFriendButton.TabIndex = 1;
             this.FindFriendButton.Text = "Знайти друга";
             this.FindFriendButton.UseVisualStyleBackColor = false;
+            this.FindFriendButton.Click += new System.EventHandler(this.FindFriendButton_Click);
             // 
             // AddFriendButton
             // 
             this.AddFriendButton.BackColor = System.Drawing.Color.Pink;
-            this.AddFriendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddFriendButton.FlatAppearance.BorderSize = 2;
+            this.AddFriendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddFriendButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddFriendButton.ForeColor = System.Drawing.Color.Maroon;
             this.AddFriendButton.Location = new System.Drawing.Point(273, 316);
             this.AddFriendButton.Name = "AddFriendButton";
@@ -75,11 +83,13 @@
             // BackButton
             // 
             this.BackButton.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BackButton.FlatAppearance.BorderSize = 2;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackButton.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BackButton.ForeColor = System.Drawing.Color.Maroon;
             this.BackButton.Location = new System.Drawing.Point(12, 12);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(159, 37);
+            this.BackButton.Size = new System.Drawing.Size(165, 37);
             this.BackButton.TabIndex = 4;
             this.BackButton.Text = "Повернутися";
             this.BackButton.UseVisualStyleBackColor = false;
@@ -88,10 +98,10 @@
             // CurrentData
             // 
             this.CurrentData.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.CurrentData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CurrentData.Location = new System.Drawing.Point(685, 410);
+            this.CurrentData.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CurrentData.Location = new System.Drawing.Point(667, 409);
             this.CurrentData.Name = "CurrentData";
-            this.CurrentData.Size = new System.Drawing.Size(103, 28);
+            this.CurrentData.Size = new System.Drawing.Size(121, 29);
             this.CurrentData.TabIndex = 5;
             // 
             // MainForm

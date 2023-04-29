@@ -39,5 +39,19 @@ namespace notebook
             this.Hide();
             addfriend.Show();
         }
+
+        private void MyFriendsButton_Click(object sender, EventArgs e)
+        {
+            FriendsList friendslist = new FriendsList();
+            this.Hide();
+            friendslist.Show();
+        }
+
+        private void FindFriendButton_Click(object sender, EventArgs e)
+        {
+            FindFriend findfriend = new FindFriend();
+            this.Hide();
+            findfriend.Show();
+        }
     }
 }

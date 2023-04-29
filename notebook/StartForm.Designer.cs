@@ -36,20 +36,22 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Title.Font = new System.Drawing.Font("Book Antiqua", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Title.ForeColor = System.Drawing.Color.Maroon;
             this.Title.Location = new System.Drawing.Point(149, 49);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(503, 42);
+            this.Title.Size = new System.Drawing.Size(491, 44);
             this.Title.TabIndex = 0;
             this.Title.Text = "Вас вітає записна книжка!";
             // 
             // StartButton
             // 
             this.StartButton.BackColor = System.Drawing.Color.Pink;
-            this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StartButton.FlatAppearance.BorderSize = 2;
+            this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartButton.ForeColor = System.Drawing.Color.Maroon;
-            this.StartButton.Location = new System.Drawing.Point(262, 131);
+            this.StartButton.Location = new System.Drawing.Point(262, 134);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(262, 87);
             this.StartButton.TabIndex = 1;
@@ -60,7 +62,9 @@
             // CloseButton
             // 
             this.CloseButton.BackColor = System.Drawing.Color.Pink;
-            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CloseButton.FlatAppearance.BorderSize = 2;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CloseButton.ForeColor = System.Drawing.Color.Maroon;
             this.CloseButton.Location = new System.Drawing.Point(262, 270);
             this.CloseButton.Name = "CloseButton";
