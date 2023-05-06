@@ -44,13 +44,13 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.dtpDateOfBirth = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtPlaceOfWorkOrStudy = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.txtAcquaintance = new System.Windows.Forms.TextBox();
             this.AddButton = new System.Windows.Forms.Button();
             this.CurrentData = new System.Windows.Forms.TextBox();
             this.BackButton = new System.Windows.Forms.Button();
@@ -233,68 +233,68 @@
             this.panel8.Size = new System.Drawing.Size(279, 40);
             this.panel8.TabIndex = 14;
             // 
-            // textBox1
+            // txtFullName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(318, 101);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 40);
-            this.textBox1.TabIndex = 15;
+            this.txtFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFullName.Location = new System.Drawing.Point(318, 101);
+            this.txtFullName.Multiline = true;
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(217, 40);
+            this.txtFullName.TabIndex = 15;
             // 
-            // textBox2
+            // dtpDateOfBirth
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(318, 147);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(217, 40);
-            this.textBox2.TabIndex = 16;
+            this.dtpDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(318, 147);
+            this.dtpDateOfBirth.Multiline = true;
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(217, 40);
+            this.dtpDateOfBirth.TabIndex = 16;
             // 
-            // textBox3
+            // txtAddress
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(318, 193);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(217, 40);
-            this.textBox3.TabIndex = 17;
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtAddress.Location = new System.Drawing.Point(318, 193);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(217, 40);
+            this.txtAddress.TabIndex = 17;
             // 
-            // textBox4
+            // txtPhoneNumber
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(318, 239);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(217, 40);
-            this.textBox4.TabIndex = 18;
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(318, 239);
+            this.txtPhoneNumber.Multiline = true;
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(217, 40);
+            this.txtPhoneNumber.TabIndex = 18;
             // 
-            // textBox5
+            // txtPlaceOfWorkOrStudy
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(318, 285);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(217, 40);
-            this.textBox5.TabIndex = 19;
+            this.txtPlaceOfWorkOrStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPlaceOfWorkOrStudy.Location = new System.Drawing.Point(318, 285);
+            this.txtPlaceOfWorkOrStudy.Multiline = true;
+            this.txtPlaceOfWorkOrStudy.Name = "txtPlaceOfWorkOrStudy";
+            this.txtPlaceOfWorkOrStudy.Size = new System.Drawing.Size(217, 40);
+            this.txtPlaceOfWorkOrStudy.TabIndex = 19;
             // 
-            // textBox6
+            // txtPosition
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(318, 331);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(217, 40);
-            this.textBox6.TabIndex = 20;
+            this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPosition.Location = new System.Drawing.Point(318, 331);
+            this.txtPosition.Multiline = true;
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(217, 40);
+            this.txtPosition.TabIndex = 20;
             // 
-            // textBox7
+            // txtAcquaintance
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(318, 377);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(217, 40);
-            this.textBox7.TabIndex = 21;
+            this.txtAcquaintance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtAcquaintance.Location = new System.Drawing.Point(318, 377);
+            this.txtAcquaintance.Multiline = true;
+            this.txtAcquaintance.Name = "txtAcquaintance";
+            this.txtAcquaintance.Size = new System.Drawing.Size(217, 40);
+            this.txtAcquaintance.TabIndex = 21;
             // 
             // AddButton
             // 
@@ -344,13 +344,13 @@
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.CurrentData);
             this.Controls.Add(this.AddButton);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAcquaintance);
+            this.Controls.Add(this.txtPosition);
+            this.Controls.Add(this.txtPlaceOfWorkOrStudy);
+            this.Controls.Add(this.txtPhoneNumber);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.dtpDateOfBirth);
+            this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -361,7 +361,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "AddFriend";
             this.Text = "Notebook";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Load += new System.EventHandler(this.AddFriend_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -400,13 +400,13 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox dtpDateOfBirth;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
+        private System.Windows.Forms.TextBox txtPlaceOfWorkOrStudy;
+        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.TextBox txtAcquaintance;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.TextBox CurrentData;
         private System.Windows.Forms.Button BackButton;

@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +52,12 @@
     <Compile Include="AddFriend.Designer.cs">
       <DependentUpon>AddFriend.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditInfo.Designer.cs">
+      <DependentUpon>EditInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindFriend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +70,7 @@
     <Compile Include="FriendsList.Designer.cs">
       <DependentUpon>FriendsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
     <Compile Include="PersonDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddFriend.resx">
       <DependentUpon>AddFriend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditInfo.resx">
+      <DependentUpon>EditInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindFriend.resx">
       <DependentUpon>FindFriend.cs</DependentUpon>
@@ -114,7 +121,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,6 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Documents\" />
+    <Folder Include="Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties person_1json__JsonSchema="https://appsemble.app/api.json" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
