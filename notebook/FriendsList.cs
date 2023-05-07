@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.IO;
+using System.Text.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace notebook
 {
     public partial class FriendsList : Form
     {
+        private List<Person> friendsList = new List<Person>();
         public FriendsList()
         {
             InitializeComponent();
@@ -34,6 +37,10 @@ namespace notebook
             string formattedDate = currentDate.ToString("dd/MM/yyyy");
             CurrentData.Text = formattedDate;
             CurrentData.ReadOnly = true;
+
+            string jsonString = File.ReadAllText("Person.json");
+
+            friendsList = JsonSerializer.Deserialize<List<Person>>(jsonString);
         }
     }
 }

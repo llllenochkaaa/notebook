@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace notebook
+﻿namespace notebook
 {
     public class Person
     {

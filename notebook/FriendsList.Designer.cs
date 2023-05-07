@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.friendsListBox = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,12 +90,22 @@
             this.comboBox1.Size = new System.Drawing.Size(163, 24);
             this.comboBox1.TabIndex = 28;
             // 
+            // friendsListBox
+            // 
+            this.friendsListBox.HideSelection = false;
+            this.friendsListBox.Location = new System.Drawing.Point(24, 118);
+            this.friendsListBox.Name = "friendsListBox";
+            this.friendsListBox.Size = new System.Drawing.Size(556, 286);
+            this.friendsListBox.TabIndex = 29;
+            this.friendsListBox.UseCompatibleStateImageBehavior = false;
+            // 
             // FriendsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.friendsListBox);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CurrentData);
@@ -116,5 +127,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListView friendsListBox;
     }
 }
