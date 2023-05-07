@@ -98,6 +98,7 @@
             this.friendsListBox.Size = new System.Drawing.Size(556, 286);
             this.friendsListBox.TabIndex = 29;
             this.friendsListBox.UseCompatibleStateImageBehavior = false;
+            this.friendsListBox.View = System.Windows.Forms.View.Details;
             // 
             // FriendsList
             // 

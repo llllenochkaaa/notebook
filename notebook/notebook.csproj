@@ -78,70 +78,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFriend.cs">
+    <Compile Include="Forms\AddFriend.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFriend.Designer.cs">
+    <Compile Include="Forms\AddFriend.Designer.cs">
       <DependentUpon>AddFriend.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditInfo.cs">
+    <Compile Include="Forms\EditInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditInfo.Designer.cs">
+    <Compile Include="Forms\EditInfo.Designer.cs">
       <DependentUpon>EditInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FindFriend.cs">
+    <Compile Include="Forms\FindFriend.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FindFriend.Designer.cs">
+    <Compile Include="Forms\FindFriend.Designer.cs">
       <DependentUpon>FindFriend.cs</DependentUpon>
     </Compile>
-    <Compile Include="FriendsList.cs">
+    <Compile Include="Forms\FriendsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FriendsList.Designer.cs">
+    <Compile Include="Forms\FriendsList.Designer.cs">
       <DependentUpon>FriendsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\FriendsList.cs" />
     <Compile Include="Models\Person.cs" />
-    <Compile Include="PersonDetails.cs">
+    <Compile Include="Forms\PersonDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonDetails.Designer.cs">
+    <Compile Include="Forms\PersonDetails.Designer.cs">
       <DependentUpon>PersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartForm.cs">
+    <Compile Include="Forms\StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartForm.Designer.cs">
+    <Compile Include="Forms\StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddFriend.resx">
+    <EmbeddedResource Include="Forms\AddFriend.resx">
       <DependentUpon>AddFriend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditInfo.resx">
+    <EmbeddedResource Include="Forms\EditInfo.resx">
       <DependentUpon>EditInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindFriend.resx">
+    <EmbeddedResource Include="Forms\FindFriend.resx">
       <DependentUpon>FindFriend.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FriendsList.resx">
+    <EmbeddedResource Include="Forms\FriendsList.resx">
       <DependentUpon>FriendsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonDetails.resx">
+    <EmbeddedResource Include="Forms\PersonDetails.resx">
       <DependentUpon>PersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartForm.resx">
+    <EmbeddedResource Include="Forms\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -169,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Documents\" />
-    <Folder Include="Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
