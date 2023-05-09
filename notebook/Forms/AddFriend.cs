@@ -9,28 +9,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Org.BouncyCastle.Asn1.X509.SigI;
 
 namespace notebook
 {
     public partial class AddFriend : Form
     {
-        private List<Person> friendsList = new List<Person>();
+        public Person Person;
 
         public AddFriend()
         {
             InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-            MainForm mainform = new MainForm();
-            this.Hide();
-            mainform.Show();
+            this.DialogResult = DialogResult.Cancel;
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
-            Person newFriend = new Person()
+            Person = new Person
             {
                 FullName = txtFullName.Text,
                 DateOfBirth = dtpDateOfBirth.Text,
@@ -41,21 +40,7 @@ namespace notebook
                 Acquaintance = txtAcquaintance.Text
             };
 
-            friendsList.Add(newFriend);
-            SaveFriendsListToJson();
-        }
-        private void SaveFriendsListToJson()
-        {
-            string friendsJson = JsonSerializer.Serialize(friendsList);
-            File.WriteAllText("Person.json", friendsJson);
-        }
-
-        private void AddFriend_Load(object sender, EventArgs e)
-        {
-            DateTime currentDate = DateTime.Now;
-            string formattedDate = currentDate.ToString("dd/MM/yyyy");
-            CurrentData.Text = formattedDate;
-            CurrentData.ReadOnly = true;
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

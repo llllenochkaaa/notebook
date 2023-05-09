@@ -82,63 +82,18 @@
     <Compile Include="Forms\AddFriend.Designer.cs">
       <DependentUpon>AddFriend.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EditInfo.Designer.cs">
-      <DependentUpon>EditInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FindFriend.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FindFriend.Designer.cs">
-      <DependentUpon>FindFriend.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FriendsList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FriendsList.Designer.cs">
-      <DependentUpon>FriendsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ListOfFriends.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Forms\PersonDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PersonDetails.Designer.cs">
-      <DependentUpon>PersonDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StartForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StartForm.Designer.cs">
-      <DependentUpon>StartForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListOfFriends.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddFriend.resx">
       <DependentUpon>AddFriend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditInfo.resx">
-      <DependentUpon>EditInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FindFriend.resx">
-      <DependentUpon>FindFriend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FriendsList.resx">
-      <DependentUpon>FriendsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PersonDetails.resx">
-      <DependentUpon>PersonDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StartForm.resx">
-      <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

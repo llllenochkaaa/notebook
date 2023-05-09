@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.IO;
+using System.Text.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,51 +9,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using notebook.Models;
+using notebook.Data;
 
 namespace notebook
 {
     public partial class MainForm : Form
     {
+        ListOfFriends listoffriends;
+
         public MainForm()
         {
             InitializeComponent();
+
+            listoffriends = new ListOfFriends();
+            listoffriends.GenTestData(20);
+
+            personBindingSource.DataSource = listoffriends.Persons;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DateTime currentDate = DateTime.Now;
-            string formattedDate = currentDate.ToString("dd/MM/yyyy");
-            CurrentData.Text = formattedDate;
-            CurrentData.ReadOnly = true;
+            DataAccess.Save(listoffriends);
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StartForm startform = new StartForm();
-            this.Hide();
-            startform.Show();
+            DataAccess.Load(listoffriends);
+            personBindingSource.ResetBindings(true);
         }
 
-        private void AddFriendButton_Click(object sender, EventArgs e)
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddFriend addfriend = new AddFriend();
-            this.Hide();
-            addfriend.Show();
+            listoffriends.Persons.Clear();
+            personBindingSource.ResetBindings(true);
         }
 
-        private void MyFriendsButton_Click(object sender, EventArgs e)
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FriendsList friendslist = new FriendsList();
-            this.Hide();
-            friendslist.Show();
+            AddFriend form = new AddFriend();
+            var result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                listoffriends.Persons.Add(form.Person);
+                personBindingSource.ResetBindings(true);
+            }
         }
 
-        private void FindFriendButton_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindFriend findfriend = new FindFriend();
-            this.Hide();
-            findfriend.Show();
+            Application.Exit();
         }
     }
 }

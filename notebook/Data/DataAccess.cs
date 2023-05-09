@@ -23,7 +23,9 @@ namespace notebook.Data
         public static void Load(ListOfFriends listoffriends)
         {
             string jsonString = File.ReadAllText(DATA_PATH);
-            listoffriends.Persons = JsonSerializer.Deserialize<List<Person>> (jsonString);
+            var newPersons = JsonSerializer.Deserialize<List<Person>> (jsonString);
+            listoffriends.Persons.Clear();
+            listoffriends.Persons.AddRange(newPersons);
         }
     }
 }
