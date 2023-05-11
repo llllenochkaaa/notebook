@@ -40,6 +40,90 @@ namespace notebook
                 Acquaintance = txtAcquaintance.Text
             };
 
+            if (!Validator.ValidateNotEmpty(txtFullName.Text))
+            {
+                MessageBox.Show("Введіть ПІБ");
+                return;
+            }
+
+            if (!Validator.ValidateFullName(txtFullName.Text))
+            {
+                MessageBox.Show("Введіть ПІБ коректно");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(dtpDateOfBirth.Text))
+            {
+                MessageBox.Show("Введіть дату народження");
+                return;
+            }
+
+            if (!Validator.ValidateDateOfBirth(dtpDateOfBirth.Text))
+            {
+                MessageBox.Show("Введіть коректну дату нарождения у форматі ДД/ММ/РР или ДД/ММ/РРРР");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtAddress.Text))
+            {
+                MessageBox.Show("Введіть адрес");
+                return;
+            }
+
+            if (!Validator.ValidateAddress(txtAddress.Text))
+            {
+                MessageBox.Show("Введіть коректні дані");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtPhoneNumber.Text))
+            {
+                MessageBox.Show("Введіть номер телефону");
+                return;
+            }
+
+            if (!Validator.ValidatePhoneNumber(txtPhoneNumber.Text))
+            {
+                MessageBox.Show("Введіть коректний номер телефону у форматі +38 (XXX) XXX-XX-XX");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtPlaceOfWorkOrStudy.Text))
+            {
+                MessageBox.Show("Введіть місце роботи/навчання");
+                return;
+            }
+
+            if (!Validator.ValidatePlaceOfWorkOrStudy(txtPlaceOfWorkOrStudy.Text))
+            {
+                MessageBox.Show("Введіть коректні дані");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtPosition.Text))
+            {
+                MessageBox.Show("Введіть посаду");
+                return;
+            }
+
+            if (!Validator.ValidatePosition(txtPosition.Text))
+            {
+                MessageBox.Show("Введіть коректні дані");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtAcquaintance.Text))
+            {
+                MessageBox.Show("Введіть характер знайомства");
+                return;
+            }
+
+            if (!Validator.ValidateAcquaintance(txtAcquaintance.Text))
+            {
+                MessageBox.Show("Введіть коректні дані");
+                return;
+            }
+
             this.DialogResult = DialogResult.OK;
         }
     }
