@@ -82,6 +82,12 @@
     <Compile Include="Forms\AddFriend.Designer.cs">
       <DependentUpon>AddFriend.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditFriend.Designer.cs">
+      <DependentUpon>EditFriend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddFriend.resx">
       <DependentUpon>AddFriend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditFriend.resx">
+      <DependentUpon>EditFriend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
