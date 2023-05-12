@@ -59,6 +59,7 @@
             this.cancelButton.TabIndex = 39;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // label7
             // 
@@ -150,6 +151,7 @@
             this.okButton.TabIndex = 38;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = false;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // txtAcquaintance
             // 

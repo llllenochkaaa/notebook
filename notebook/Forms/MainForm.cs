@@ -13,6 +13,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using notebook.Models;
 using notebook.Data;
 using System.Web.UI.WebControls;
+using DocuSign.eSign.Model;
+using notebook.Forms;
 
 namespace notebook
 {
@@ -25,7 +27,7 @@ namespace notebook
             InitializeComponent();
 
             listoffriends = new ListOfFriends();
-            listoffriends.GenTestData(20);
+            listoffriends.List();
 
             personBindingSource.DataSource = listoffriends.Persons;
         }
@@ -56,6 +58,8 @@ namespace notebook
                 listoffriends.Persons.Add(form.Person);
                 personBindingSource.ResetBindings(true);
             }
+
+            friendslist.CurrentCell = friendslist.Rows[friendslist.Rows.Count - 1].Cells[0];
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,7 +74,26 @@ namespace notebook
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var selectedRow = friendslist.CurrentRow;
 
+            if (selectedRow == null)
+            {
+                return;
+            }
+
+            var selectedPerson = selectedRow.DataBoundItem as Person;
+
+            if (selectedPerson == null)
+            {
+                return;
+            }
+
+            EditFriend form = new EditFriend(selectedPerson);
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                personBindingSource.ResetBindings(true);
+            }
         }
     }
 }

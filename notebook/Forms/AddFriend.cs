@@ -29,6 +29,7 @@ namespace notebook
 
         private void okButton_Click(object sender, EventArgs e)
         {
+
             Person = new Person
             {
                 FullName = txtFullName.Text,

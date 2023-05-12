@@ -185,7 +185,7 @@
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.okButton.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.okButton.ForeColor = System.Drawing.Color.Maroon;
-            this.okButton.Location = new System.Drawing.Point(347, 470);
+            this.okButton.Location = new System.Drawing.Point(346, 470);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(142, 49);
             this.okButton.TabIndex = 22;
