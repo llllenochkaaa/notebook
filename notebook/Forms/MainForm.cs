@@ -72,28 +72,30 @@ namespace notebook
             personBindingSource.RemoveCurrent();
         }
 
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var selectedRow = friendslist.CurrentRow;
+        //private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    var selectedRow = friendslist.CurrentRow;
 
-            if (selectedRow == null)
-            {
-                return;
-            }
+        //    if (selectedRow == null)
+        //    {
+        //        return;
+        //    }
 
-            var selectedPerson = selectedRow.DataBoundItem as Person;
+        //    var selectedPerson = selectedRow.DataBoundItem as Person;
 
-            if (selectedPerson == null)
-            {
-                return;
-            }
+        //    if (selectedPerson == null)
+        //    {
+        //        return;
+        //    }
 
-            EditFriend form = new EditFriend(selectedPerson);
+        //    EditFriend form = new EditFriend(selectedPerson);
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                personBindingSource.ResetBindings(true);
-            }
-        }
+        //    if (form.ShowDialog() == DialogResult.OK)
+        //    {
+        //        personBindingSource.ResetBindings(true);
+        //    }
+
+
+        //}
     }
 }
