@@ -62,15 +62,15 @@ namespace notebook
             friendslist.CurrentCell = friendslist.Rows[friendslist.Rows.Count - 1].Cells[0];
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        //private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    Application.Exit();
+        //}
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            personBindingSource.RemoveCurrent();
-        }
+        //private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    personBindingSource.RemoveCurrent();
+        //}
 
         //private void editToolStripMenuItem_Click(object sender, EventArgs e)
         //{
