@@ -27,9 +27,9 @@ namespace notebook
             InitializeComponent();
 
             listoffriends = new ListOfFriends();
-            listoffriends.List();
+            listoffriends.GenTestData(100);
 
-            personBindingSource.DataSource = listoffriends.Persons;
+            //personBindingSource.DataSource = listoffriends.Persons;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +57,7 @@ namespace notebook
             {
                 listoffriends.Persons.Add(form.Person);
                 personBindingSource.ResetBindings(true);
+                listoffriends.IsDirty = true;
             }
 
             friendslist.CurrentCell = friendslist.Rows[friendslist.Rows.Count - 1].Cells[0];
@@ -93,24 +94,46 @@ namespace notebook
             if (form.ShowDialog() == DialogResult.OK)
             {
                 personBindingSource.ResetBindings(true);
+                listoffriends.IsDirty = true;
             }
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!listoffriends.IsDirty)
+            {
+                return;
+            }
+
             var res = MessageBox.Show("Do you want to save changes?", "", MessageBoxButtons.YesNoCancel);
             switch (res)
             {
                 case DialogResult.Yes:
                     DataAccess.Save(listoffriends);
-                    Close();
                     break;
                 case DialogResult.No:
-                    Close();
                     break;
                 case DialogResult.Cancel:
+                    e.Cancel = true;
                     break;
             }
+        }
+
+        //private void searchButton_Click(object sender, EventArgs e)
+        //{
+        //    List<Person> result = listoffriends.SearchFriends(searchBox.Text.ToLower());
+        //    personBindingSource.DataSource = result;
+        //}
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            List<Person> result = listoffriends.SearchFriends(searchBox.Text.ToLower());
+            personBindingSource.DataSource = result;
         }
     }
 }
