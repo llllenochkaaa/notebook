@@ -124,16 +124,15 @@ namespace notebook
             }
         }
 
-        //private void searchButton_Click(object sender, EventArgs e)
-        //{
-        //    List<Person> result = listoffriends.SearchFriends(searchBox.Text.ToLower());
-        //    personBindingSource.DataSource = result;
-        //}
-
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             List<Person> result = listoffriends.SearchFriends(searchBox.Text.ToLower());
             personBindingSource.DataSource = result;
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            searchBox_TextChanged(null, null);
         }
     }
 }

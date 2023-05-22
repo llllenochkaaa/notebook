@@ -48,6 +48,8 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.friendslist = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +58,12 @@
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acquaintanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.searchBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.friendslist)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,7 +71,7 @@
             this.panel1.BackColor = System.Drawing.Color.Pink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Title);
-            this.panel1.Location = new System.Drawing.Point(12, 40);
+            this.panel1.Location = new System.Drawing.Point(12, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(131, 40);
             this.panel1.TabIndex = 27;
@@ -221,12 +222,31 @@
             this.positionDataGridViewTextBoxColumn,
             this.acquaintanceDataGridViewTextBoxColumn});
             this.friendslist.DataSource = this.personBindingSource;
-            this.friendslist.Location = new System.Drawing.Point(12, 146);
+            this.friendslist.Location = new System.Drawing.Point(12, 140);
             this.friendslist.Name = "friendslist";
             this.friendslist.RowHeadersWidth = 51;
             this.friendslist.RowTemplate.Height = 24;
-            this.friendslist.Size = new System.Drawing.Size(776, 292);
+            this.friendslist.Size = new System.Drawing.Size(776, 298);
             this.friendslist.TabIndex = 36;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.searchButton);
+            this.groupBox1.Controls.Add(this.searchBox);
+            this.groupBox1.Location = new System.Drawing.Point(401, 40);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(387, 85);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search";
+            // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(7, 22);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(374, 22);
+            this.searchBox.TabIndex = 0;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
@@ -288,23 +308,15 @@
             // 
             this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
-            // groupBox1
+            // searchButton
             // 
-            this.groupBox1.Controls.Add(this.searchBox);
-            this.groupBox1.Location = new System.Drawing.Point(401, 40);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 100);
-            this.groupBox1.TabIndex = 37;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search";
-            // 
-            // searchBox
-            // 
-            this.searchBox.Location = new System.Drawing.Point(7, 22);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(374, 22);
-            this.searchBox.TabIndex = 0;
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchButton.Location = new System.Drawing.Point(151, 50);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(87, 29);
+            this.searchButton.TabIndex = 1;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // MainForm
             // 
@@ -325,9 +337,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.friendslist)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +375,6 @@
         private System.Windows.Forms.DataGridView friendslist;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Button searchButton;
     }
 }
