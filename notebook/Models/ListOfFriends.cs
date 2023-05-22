@@ -9,29 +9,33 @@ namespace notebook.Models
 {
     public class ListOfFriends
     {
+
+        public bool IsDirty { get; set; }
+
         public ListOfFriends() 
         { 
 
         }
         public List<Person> Persons { get; set; }
 
-        public void List()
+        public void GenTestData(int n)
         {
             Persons = new List<Person>();
-            //for (int i = 0; i < n; i++)
-            //{
-            //    var person = new Person
-            //    {
-            //        FullName = "FullName" + i,
-            //        DateOfBirth = "DateOfBirth" + i,
-            //        Address = "Address" + i,
-            //        PhoneNumber = "PhoneNumber" + i,
-            //        PlaceOfWorkOrStudy = "PlaceOfWorkOrStudy" + i,
-            //        Position = "Position" + i,
-            //        Acquaintance = "Acquaintance" + i
-            //    };
-            //    Persons.Add(person);
-            //}
+            for (int i = 0; i < n; i++)
+            {
+                var person = new Person
+                {
+                    FullName = "FullName" + i,
+                    DateOfBirth = "DateOfBirth" + i,
+                    Address = "Address" + i,
+                    PhoneNumber = "PhoneNumber" + i,
+                    PlaceOfWorkOrStudy = "PlaceOfWorkOrStudy" + i,
+                    Position = "Position" + i,
+                    Acquaintance = "Acquaintance" + i
+                };
+                Persons.Add(person);
+            }
+            IsDirty = true;
         }
     }
 }

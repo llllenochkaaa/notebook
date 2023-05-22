@@ -64,7 +64,7 @@ namespace notebook
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +93,23 @@ namespace notebook
             if (form.ShowDialog() == DialogResult.OK)
             {
                 personBindingSource.ResetBindings(true);
+            }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var res = MessageBox.Show("Do you want to save changes?", "", MessageBoxButtons.YesNoCancel);
+            switch (res)
+            {
+                case DialogResult.Yes:
+                    DataAccess.Save(listoffriends);
+                    Close();
+                    break;
+                case DialogResult.No:
+                    Close();
+                    break;
+                case DialogResult.Cancel:
+                    break;
             }
         }
     }

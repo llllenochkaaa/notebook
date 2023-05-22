@@ -18,6 +18,7 @@ namespace notebook.Data
         {
             string jsonString = JsonSerializer.Serialize (listoffriends.Persons);
             File.WriteAllText(DATA_PATH, jsonString);
+            listoffriends.IsDirty = false;
         }
 
         public static void Load(ListOfFriends listoffriends)
@@ -26,6 +27,7 @@ namespace notebook.Data
             var newPersons = JsonSerializer.Deserialize<List<Person>> (jsonString);
             listoffriends.Persons.Clear();
             listoffriends.Persons.AddRange(newPersons);
+            listoffriends.IsDirty = false;
         }
     }
 }
