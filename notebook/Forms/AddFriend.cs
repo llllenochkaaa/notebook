@@ -10,16 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Org.BouncyCastle.Asn1.X509.SigI;
+using notebook.Models;
 
 namespace notebook
 {
     public partial class AddFriend : Form
     {
         public Person Person;
+        //private ListOfFriends listoffriends;
 
-        public AddFriend()
+        public AddFriend(/*ListOfFriends listoffriends)*/)
         {
             InitializeComponent();
+            //this.listoffriends = listoffriends;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -38,7 +41,8 @@ namespace notebook
                 PhoneNumber = txtPhoneNumber.Text,
                 PlaceOfWorkOrStudy = txtPlaceOfWorkOrStudy.Text,
                 Position = txtPosition.Text,
-                Acquaintance = txtAcquaintance.Text
+                Acquaintance = txtAcquaintance.Text,
+                //LastAddedDate = DateTime.Now
             };
 
             if (!Validator.ValidateNotEmpty(txtFullName.Text))

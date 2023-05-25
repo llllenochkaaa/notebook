@@ -13,30 +13,30 @@ namespace notebook.Models
         public bool IsDirty { get; set; }
 
         public ListOfFriends() 
-        { 
-
+        {
+            Persons = new List<Person>();
         }
 
         public List<Person> Persons { get; set; }
 
-        public void GenTestData(int n)
+        public void InitializeList()
         {
             Persons = new List<Person>();
-            for (int i = 0; i < n; i++)
-            {
-                var person = new Person
-                {
-                    FullName = "FullName" + i,
-                    DateOfBirth = "DateOfBirth" + i,
-                    Address = "Address" + i,
-                    PhoneNumber = "PhoneNumber" + i,
-                    PlaceOfWorkOrStudy = "PlaceOfWorkOrStudy" + i,
-                    Position = "Position" + i,
-                    Acquaintance = "Acquaintance" + i
-                };
-                Persons.Add(person);
-            }
-            IsDirty = true;
+            //for (int i = 0; i < n; i++)
+            //{
+            //    var person = new Person
+            //    {
+            //        FullName = "FullName" + i,
+            //        DateOfBirth = "DateOfBirth" + i,
+            //        Address = "Address" + i,
+            //        PhoneNumber = "PhoneNumber" + i,
+            //        PlaceOfWorkOrStudy = "PlaceOfWorkOrStudy" + i,
+            //        Position = "Position" + i,
+            //        Acquaintance = "Acquaintance" + i
+            //    };
+            //    Persons.Add(person);
+            //}
+            //IsDirty = true;
         }
 
         internal List<Person> SearchFriends(string line)
@@ -45,7 +45,10 @@ namespace notebook.Models
             var text = line.ToLower();
             foreach (Person person in Persons)
             {
-                if (person.FullName.ToLower().IndexOf(text) > -1 || person.PlaceOfWorkOrStudy.ToLower().IndexOf(text) > -1 || person.Position.ToLower().IndexOf(text) > -1 || person.Acquaintance.ToLower().IndexOf(text) > -1)
+                if (person.FullName.ToLower().IndexOf(text) > -1 || 
+                person.PlaceOfWorkOrStudy.ToLower().IndexOf(text) > -1 || 
+                person.Position.ToLower().IndexOf(text) > -1 || 
+                person.Acquaintance.ToLower().IndexOf(text) > -1)
                 {
                     result.Add(person);
                 }

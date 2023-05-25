@@ -27,9 +27,9 @@ namespace notebook
             InitializeComponent();
 
             listoffriends = new ListOfFriends();
-            listoffriends.GenTestData(100);
+            //listoffriends.List();
 
-            //personBindingSource.DataSource = listoffriends.Persons;
+            personBindingSource.DataSource = listoffriends.Persons;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,7 +40,8 @@ namespace notebook
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataAccess.Load(listoffriends);
-            personBindingSource.ResetBindings(true);
+            personBindingSource.DataSource = listoffriends.Persons;
+            personBindingSource.ResetBindings(false);
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,14 +54,13 @@ namespace notebook
         {
             AddFriend form = new AddFriend();
             var result = form.ShowDialog();
+
             if (result == DialogResult.OK)
             {
                 listoffriends.Persons.Add(form.Person);
                 personBindingSource.ResetBindings(true);
                 listoffriends.IsDirty = true;
             }
-
-            friendslist.CurrentCell = friendslist.Rows[friendslist.Rows.Count - 1].Cells[0];
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,6 +133,45 @@ namespace notebook
         private void searchButton_Click(object sender, EventArgs e)
         {
             searchBox_TextChanged(null, null);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            sortComboBox.Items.Insert(0, "Alphabet");
+            sortComboBox.Items.Add("Last edit date");
+
+            sortComboBox.SelectedIndex = 0;
+            sortComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            listoffriends = new ListOfFriends();
+            DataAccess.Load(listoffriends);
+            personBindingSource.DataSource = listoffriends.Persons;
+            //foreach (DataGridViewColumn column in friendslist.Columns)
+            //{
+            //    column.ReadOnly = true;
+            //}
+
+            friendslist.ClearSelection();
+            friendslist.AllowUserToAddRows = false;
+
+            //if (friendslist.Rows.Count > 0 && friendslist.Rows[0].IsNewRow)
+            //{
+            //    friendslist.Rows.RemoveAt(0);
+            //}
+        }
+
+        private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedSort = sortComboBox.SelectedItem.ToString();
+
+            if (selectedSort == "Alphabet")
+            {
+                personBindingSource.DataSource = listoffriends.Persons.OrderBy(p => p.FullName).ToList();
+            }
+            //else if (selectedSort == "Last edit date")
+            //{
+            //    personBindingSource.DataSource = listoffriends.Persons.OrderByDescending(p => p.LastAddedDate).ToList();
+            //}
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace notebook
+﻿using System;
+
+namespace notebook
 {
     public class Person
     {
@@ -9,5 +11,6 @@
         public string PlaceOfWorkOrStudy { get; set; }
         public string Position { get; set; }
         public string Acquaintance { get; set; }
+        //public DateTime LastAddedDate { get; set; }
     }
 }
