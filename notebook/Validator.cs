@@ -1,10 +1,12 @@
-﻿using System;
+﻿using notebook.Models;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace notebook
 {
@@ -51,6 +53,31 @@ namespace notebook
         public static bool ValidateNotEmpty(string fieldValue)
         {
             return !string.IsNullOrEmpty(fieldValue);
+        }
+
+        public static bool ValidateExistingPerson(ListOfFriends listoffriends, Person person)
+        {
+            if (listoffriends.Persons.Any(p => p.FullName == person.FullName
+                && p.DateOfBirth == person.DateOfBirth && p.Address == person.Address
+                && p.PlaceOfWorkOrStudy == person.PlaceOfWorkOrStudy
+                && p.Acquaintance == person.Acquaintance && !p.Equals(person)))
+            {
+                MessageBox.Show("This friend already exists in the list. Change the data before adding.");
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool ValidateUniquePhoneNumber(ListOfFriends listoffriends, Person person)
+        {
+            if (listoffriends.Persons.Any(p => p.PhoneNumber == person.PhoneNumber && !p.Equals(person)))
+            {
+                MessageBox.Show("A friend with the same phone number already exists in the list. Change the data before adding.");
+                return false;
+            }
+
+            return true;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DocuSign.eSign.Model;
+using notebook.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace notebook.Forms
     public partial class EditFriend : Form
     {
         public Person Person;
+        ListOfFriends listoffriends;
 
-        public EditFriend(Person person)
+        public EditFriend(Person person, ListOfFriends friendsList)
         {
             InitializeComponent();
+            listoffriends = friendsList;
 
             Person = person;
             txtFullName.Text = person.FullName;
@@ -46,89 +49,106 @@ namespace notebook.Forms
 
             if (!Validator.ValidateNotEmpty(txtFullName.Text))
             {
-                MessageBox.Show("Введіть ПІБ");
+                MessageBox.Show("Enter full name");
                 return;
             }
 
             if (!Validator.ValidateFullName(txtFullName.Text))
             {
-                MessageBox.Show("Введіть ПІБ коректно");
+                MessageBox.Show("Enter the data correctly");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(dtpDateOfBirth.Text))
             {
-                MessageBox.Show("Введіть дату народження");
+                MessageBox.Show("Enter date of birth");
                 return;
             }
 
             if (!Validator.ValidateDateOfBirth(dtpDateOfBirth.Text))
             {
-                MessageBox.Show("Введіть коректну дату нарождения у форматі ДД/ММ/РР или ДД/ММ/РРРР");
+                MessageBox.Show("Enter the correct date of birth in DD/MM/YY or DD/MM/YYYY format");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtAddress.Text))
             {
-                MessageBox.Show("Введіть адрес");
+                MessageBox.Show("Enter the address");
                 return;
             }
 
             if (!Validator.ValidateAddress(txtAddress.Text))
             {
-                MessageBox.Show("Введіть коректні дані");
+                MessageBox.Show("Enter the data correctly");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPhoneNumber.Text))
             {
-                MessageBox.Show("Введіть номер телефону");
+                MessageBox.Show("Enter a phone number");
                 return;
             }
 
             if (!Validator.ValidatePhoneNumber(txtPhoneNumber.Text))
             {
-                MessageBox.Show("Введіть коректний номер телефону у форматі +38 (XXX) XXX-XX-XX");
+                MessageBox.Show("Enter a valid phone number in the format +38XXXXXXXXXX");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPlaceOfWorkOrStudy.Text))
             {
-                MessageBox.Show("Введіть місце роботи/навчання");
+                MessageBox.Show("Enter place of work/study");
                 return;
             }
 
             if (!Validator.ValidatePlaceOfWorkOrStudy(txtPlaceOfWorkOrStudy.Text))
             {
-                MessageBox.Show("Введіть коректні дані");
+                MessageBox.Show("Enter the data correctly");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPosition.Text))
             {
-                MessageBox.Show("Введіть посаду");
+                MessageBox.Show("Enter the position");
                 return;
             }
 
             if (!Validator.ValidatePosition(txtPosition.Text))
             {
-                MessageBox.Show("Введіть коректні дані");
+                MessageBox.Show("Enter the data correctly");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtAcquaintance.Text))
             {
-                MessageBox.Show("Введіть характер знайомства");
+                MessageBox.Show("Enter the nature of the acquaintance");
                 return;
             }
 
             if (!Validator.ValidateAcquaintance(txtAcquaintance.Text))
             {
-                MessageBox.Show("Введіть коректні дані");
+                MessageBox.Show("Enter the data correctly");
+                return;
+            }
+
+            if (!Validator.ValidateExistingPerson(listoffriends, Person))
+            {
+                return;
+            }
+
+            if (!Validator.ValidateUniquePhoneNumber(listoffriends, Person))
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure you want to change the data?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
                 return;
             }
 
             DialogResult = DialogResult.OK;
+            MessageBox.Show("The data has been successfully edited!");
         }
     }
 }

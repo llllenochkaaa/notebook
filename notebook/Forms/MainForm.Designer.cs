@@ -53,7 +53,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.friendslist = new System.Windows.Forms.DataGridView();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +60,7 @@
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acquaintanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -259,6 +259,11 @@
             // 
             // friendslist
             // 
+            this.friendslist.AllowUserToAddRows = false;
+            this.friendslist.AllowUserToDeleteRows = false;
+            this.friendslist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.friendslist.AutoGenerateColumns = false;
             this.friendslist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.friendslist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -272,14 +277,11 @@
             this.friendslist.DataSource = this.personBindingSource;
             this.friendslist.Location = new System.Drawing.Point(12, 144);
             this.friendslist.Name = "friendslist";
+            this.friendslist.ReadOnly = true;
             this.friendslist.RowHeadersWidth = 51;
             this.friendslist.RowTemplate.Height = 24;
             this.friendslist.Size = new System.Drawing.Size(776, 294);
             this.friendslist.TabIndex = 39;
-            // 
-            // personBindingSource
-            // 
-            this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
@@ -287,6 +289,7 @@
             this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
             this.fullNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.fullNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // dateOfBirthDataGridViewTextBoxColumn
@@ -295,6 +298,7 @@
             this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth";
             this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateOfBirthDataGridViewTextBoxColumn.Width = 125;
             // 
             // addressDataGridViewTextBoxColumn
@@ -303,6 +307,7 @@
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             this.addressDataGridViewTextBoxColumn.Width = 125;
             // 
             // phoneNumberDataGridViewTextBoxColumn
@@ -311,6 +316,7 @@
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.phoneNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // placeOfWorkOrStudyDataGridViewTextBoxColumn
@@ -319,6 +325,7 @@
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn.HeaderText = "PlaceOfWorkOrStudy";
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn.Name = "placeOfWorkOrStudyDataGridViewTextBoxColumn";
+            this.placeOfWorkOrStudyDataGridViewTextBoxColumn.ReadOnly = true;
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn.Width = 125;
             // 
             // positionDataGridViewTextBoxColumn
@@ -327,6 +334,7 @@
             this.positionDataGridViewTextBoxColumn.HeaderText = "Position";
             this.positionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.positionDataGridViewTextBoxColumn.Name = "positionDataGridViewTextBoxColumn";
+            this.positionDataGridViewTextBoxColumn.ReadOnly = true;
             this.positionDataGridViewTextBoxColumn.Width = 125;
             // 
             // acquaintanceDataGridViewTextBoxColumn
@@ -335,7 +343,12 @@
             this.acquaintanceDataGridViewTextBoxColumn.HeaderText = "Acquaintance";
             this.acquaintanceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.acquaintanceDataGridViewTextBoxColumn.Name = "acquaintanceDataGridViewTextBoxColumn";
+            this.acquaintanceDataGridViewTextBoxColumn.ReadOnly = true;
             this.acquaintanceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
             // MainForm
             // 

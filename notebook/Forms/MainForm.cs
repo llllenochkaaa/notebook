@@ -41,18 +41,21 @@ namespace notebook
         {
             DataAccess.Load(listoffriends);
             personBindingSource.DataSource = listoffriends.Persons;
-            personBindingSource.ResetBindings(false);
+            personBindingSource.ResetBindings(true);
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listoffriends.Persons.Clear();
-            personBindingSource.ResetBindings(true);
+            if (MessageBox.Show("Are you sure that you want to clear your friends list?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                listoffriends.Persons.Clear();
+                personBindingSource.ResetBindings(false);
+            }
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddFriend form = new AddFriend();
+            AddFriend form = new AddFriend(listoffriends);
             var result = form.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -70,7 +73,16 @@ namespace notebook
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            personBindingSource.RemoveCurrent();
+            if (MessageBox.Show("Are you sure that you want to remove the friend from the list?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                var selectedPerson = personBindingSource.Current as Person;
+                if (selectedPerson != null)
+                {
+                    listoffriends.Persons.Remove(selectedPerson);
+                    personBindingSource.ResetBindings(true);
+                    listoffriends.IsDirty = true;
+                }
+            }
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,7 +101,7 @@ namespace notebook
                 return;
             }
 
-            EditFriend form = new EditFriend(selectedPerson);
+            EditFriend form = new EditFriend(selectedPerson, listoffriends);
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -110,7 +122,7 @@ namespace notebook
                 return;
             }
 
-            var res = MessageBox.Show("Do you want to save changes?", "", MessageBoxButtons.YesNoCancel);
+            var res = MessageBox.Show("Do you want to save changes?", "Confirmation", MessageBoxButtons.YesNoCancel);
             switch (res)
             {
                 case DialogResult.Yes:
@@ -143,13 +155,9 @@ namespace notebook
             sortComboBox.SelectedIndex = 0;
             sortComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            listoffriends = new ListOfFriends();
+            //listoffriends = new ListOfFriends();
             DataAccess.Load(listoffriends);
             personBindingSource.DataSource = listoffriends.Persons;
-            //foreach (DataGridViewColumn column in friendslist.Columns)
-            //{
-            //    column.ReadOnly = true;
-            //}
 
             friendslist.ClearSelection();
             friendslist.AllowUserToAddRows = false;

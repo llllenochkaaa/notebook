@@ -17,12 +17,12 @@ namespace notebook
     public partial class AddFriend : Form
     {
         public Person Person;
-        //private ListOfFriends listoffriends;
+        ListOfFriends listoffriends;
 
-        public AddFriend(/*ListOfFriends listoffriends)*/)
+        public AddFriend(ListOfFriends friendsList)
         {
             InitializeComponent();
-            //this.listoffriends = listoffriends;
+            this.listoffriends = friendsList;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -45,91 +45,117 @@ namespace notebook
                 //LastAddedDate = DateTime.Now
             };
 
+            //if (listoffriends.Persons.Any(p => p.FullName == Person.FullName 
+            //&& p.DateOfBirth == Person.DateOfBirth && p.Address == Person.Address
+            //&& p.PhoneNumber == Person.PhoneNumber && p.PlaceOfWorkOrStudy == Person.PlaceOfWorkOrStudy
+            //&& p.Acquaintance == Person.Acquaintance))
+            //{
+            //    MessageBox.Show("This friend already exists in the list. Change the data before adding.");
+            //    return;
+            //}
+
+            //if (listoffriends.Persons.Any(p => p.PhoneNumber == Person.PhoneNumber))
+            //{
+            //    MessageBox.Show("A friend with the same phone number already exists in the list. Change the data before adding.");
+            //    return;
+            //}
+
             if (!Validator.ValidateNotEmpty(txtFullName.Text))
             {
-                MessageBox.Show("Введіть ПІБ");
+                MessageBox.Show("Enter full name");
                 return;
             }
 
             if (!Validator.ValidateFullName(txtFullName.Text))
             {
-                MessageBox.Show("Введіть ПІБ коректно");
+                MessageBox.Show("Enter the data correctly");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(dtpDateOfBirth.Text))
             {
-                MessageBox.Show("Введіть дату народження");
+                MessageBox.Show("Enter date of birth");
                 return;
             }
 
             if (!Validator.ValidateDateOfBirth(dtpDateOfBirth.Text))
             {
-                MessageBox.Show("Введіть коректну дату нарождения у форматі ДД/ММ/РР или ДД/ММ/РРРР");
+                MessageBox.Show("Enter the correct date of birth in DD/MM/YY or DD/MM/YYYY format");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtAddress.Text))
             {
-                MessageBox.Show("Введіть адрес");
+                MessageBox.Show("Enter the address");
                 return;
             }
 
             if (!Validator.ValidateAddress(txtAddress.Text))
             {
-                MessageBox.Show("Введіть коректні дані");
+                MessageBox.Show("Enter the data correctly");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPhoneNumber.Text))
             {
-                MessageBox.Show("Введіть номер телефону");
+                MessageBox.Show("Enter a phone number");
                 return;
             }
 
             if (!Validator.ValidatePhoneNumber(txtPhoneNumber.Text))
             {
-                MessageBox.Show("Введіть коректний номер телефону у форматі +38 (XXX) XXX-XX-XX");
+                MessageBox.Show("Enter a valid phone number in the format +38XXXXXXXXXX");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPlaceOfWorkOrStudy.Text))
             {
-                MessageBox.Show("Введіть місце роботи/навчання");
+                MessageBox.Show("Enter place of work/study");
                 return;
             }
 
             if (!Validator.ValidatePlaceOfWorkOrStudy(txtPlaceOfWorkOrStudy.Text))
             {
-                MessageBox.Show("Введіть коректні дані");
+                MessageBox.Show("Enter the data correctly");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPosition.Text))
             {
-                MessageBox.Show("Введіть посаду");
+                MessageBox.Show("Enter the position");
                 return;
             }
 
             if (!Validator.ValidatePosition(txtPosition.Text))
             {
-                MessageBox.Show("Введіть коректні дані");
+                MessageBox.Show("Enter the data correctly");
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtAcquaintance.Text))
             {
-                MessageBox.Show("Введіть характер знайомства");
+                MessageBox.Show("Enter the nature of the acquaintance");
                 return;
             }
 
             if (!Validator.ValidateAcquaintance(txtAcquaintance.Text))
             {
-                MessageBox.Show("Введіть коректні дані");
+                MessageBox.Show("Enter the data correctly");
+                return;
+            }
+
+            if (!Validator.ValidateExistingPerson(listoffriends, Person))
+            {
+                return;
+            }
+
+            if (!Validator.ValidateUniquePhoneNumber(listoffriends, Person))
+            {
                 return;
             }
 
             this.DialogResult = DialogResult.OK;
+            MessageBox.Show("A new friend has been added!");
         }
     }
 }
