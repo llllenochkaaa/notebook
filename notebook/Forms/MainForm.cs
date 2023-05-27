@@ -46,6 +46,8 @@ namespace notebook
             DataAccess.Load(listoffriends);
             personBindingSource.DataSource = listoffriends.Persons;
             personBindingSource.ResetBindings(true);
+
+            UpdateBirthdayMessage();
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,11 +120,6 @@ namespace notebook
 
                 UpdateBirthdayMessage();
             }
-        }
-
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

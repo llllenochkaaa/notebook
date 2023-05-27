@@ -54,6 +54,7 @@
             this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.friendslist = new System.Windows.Forms.DataGridView();
             this.birthdayTextBox = new System.Windows.Forms.TextBox();
+            this.copyButton = new System.Windows.Forms.Button();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +63,6 @@
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acquaintanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.copyButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -224,12 +224,16 @@
             // 
             // searchButton
             // 
+            this.searchButton.BackColor = System.Drawing.Color.Pink;
+            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchButton.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchButton.ForeColor = System.Drawing.Color.Maroon;
             this.searchButton.Location = new System.Drawing.Point(151, 50);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(87, 29);
             this.searchButton.TabIndex = 1;
             this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchBox
@@ -286,11 +290,26 @@
             // 
             // birthdayTextBox
             // 
-            this.birthdayTextBox.Location = new System.Drawing.Point(147, 427);
+            this.birthdayTextBox.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.birthdayTextBox.Location = new System.Drawing.Point(147, 407);
             this.birthdayTextBox.Multiline = true;
             this.birthdayTextBox.Name = "birthdayTextBox";
-            this.birthdayTextBox.Size = new System.Drawing.Size(362, 71);
+            this.birthdayTextBox.Size = new System.Drawing.Size(362, 77);
             this.birthdayTextBox.TabIndex = 40;
+            // 
+            // copyButton
+            // 
+            this.copyButton.BackColor = System.Drawing.Color.Pink;
+            this.copyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copyButton.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.copyButton.ForeColor = System.Drawing.Color.Maroon;
+            this.copyButton.Location = new System.Drawing.Point(531, 425);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(108, 34);
+            this.copyButton.TabIndex = 41;
+            this.copyButton.Text = "Copy";
+            this.copyButton.UseVisualStyleBackColor = false;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
@@ -359,22 +378,12 @@
             // 
             this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
-            // copyButton
-            // 
-            this.copyButton.Location = new System.Drawing.Point(540, 444);
-            this.copyButton.Name = "copyButton";
-            this.copyButton.Size = new System.Drawing.Size(108, 34);
-            this.copyButton.TabIndex = 41;
-            this.copyButton.Text = "Copy";
-            this.copyButton.UseVisualStyleBackColor = true;
-            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
-            this.ClientSize = new System.Drawing.Size(800, 527);
+            this.ClientSize = new System.Drawing.Size(800, 496);
             this.Controls.Add(this.copyButton);
             this.Controls.Add(this.birthdayTextBox);
             this.Controls.Add(this.friendslist);
@@ -385,7 +394,6 @@
             this.Name = "MainForm";
             this.Text = "Notebook";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
