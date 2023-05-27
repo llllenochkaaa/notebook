@@ -52,7 +52,7 @@ namespace notebook
 
         public static bool ValidateNotEmpty(string fieldValue)
         {
-            return !string.IsNullOrEmpty(fieldValue);
+            return !string.IsNullOrEmpty(fieldValue) && fieldValue.Length > 2;
         }
 
         public static bool ValidateExistingPerson(ListOfFriends listoffriends, Person person)

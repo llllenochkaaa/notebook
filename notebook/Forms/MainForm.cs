@@ -15,6 +15,8 @@ using notebook.Data;
 using System.Web.UI.WebControls;
 using DocuSign.eSign.Model;
 using notebook.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+using System.Globalization;
 
 namespace notebook
 {
@@ -30,6 +32,8 @@ namespace notebook
             //listoffriends.List();
 
             personBindingSource.DataSource = listoffriends.Persons;
+
+            Shown += MainForm_Shown;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +67,8 @@ namespace notebook
                 listoffriends.Persons.Add(form.Person);
                 personBindingSource.ResetBindings(true);
                 listoffriends.IsDirty = true;
+
+                CheckBirthdays(listoffriends);
             }
         }
 
@@ -107,6 +113,8 @@ namespace notebook
             {
                 personBindingSource.ResetBindings(true);
                 listoffriends.IsDirty = true;
+
+                CheckBirthdays(listoffriends);
             }
         }
 
@@ -162,6 +170,8 @@ namespace notebook
             friendslist.ClearSelection();
             friendslist.AllowUserToAddRows = false;
 
+            birthdayTextBox.ReadOnly = true;
+            //CheckBirthdays(listoffriends);
             //if (friendslist.Rows.Count > 0 && friendslist.Rows[0].IsNewRow)
             //{
             //    friendslist.Rows.RemoveAt(0);
@@ -180,6 +190,46 @@ namespace notebook
             //{
             //    personBindingSource.DataSource = listoffriends.Persons.OrderByDescending(p => p.LastAddedDate).ToList();
             //}
+        }
+
+        public static string CheckBirthdays(ListOfFriends listOfFriends)
+        {
+            DateTime today = DateTime.Today;
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Person person in listOfFriends.Persons)
+            {
+                DateTime dateOfBirth;
+                if (DateTime.TryParseExact(person.DateOfBirth, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateOfBirth))
+                {
+                    if (dateOfBirth.Month == today.Month && dateOfBirth.Day == today.Day)
+                    {
+                        sb.AppendLine($"Happy birthday, {person.FullName}! I wish you happiness, health, and a lot of money!");
+                    }
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            string birthdayMessage = CheckBirthdays(listoffriends);
+            if (!string.IsNullOrEmpty(birthdayMessage))
+            {
+                Clipboard.SetText(birthdayMessage);
+                birthdayTextBox.Text = birthdayMessage;
+            }
+        }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            string birthdayMessage = CheckBirthdays(listoffriends);
+            if (!string.IsNullOrEmpty(birthdayMessage))
+            {
+                Clipboard.SetText(birthdayMessage);
+                MessageBox.Show("The text was successfully copied to the clipboard!");
+            }
         }
     }
 }

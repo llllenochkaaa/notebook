@@ -53,6 +53,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.friendslist = new System.Windows.Forms.DataGridView();
+            this.birthdayTextBox = new System.Windows.Forms.TextBox();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +62,7 @@
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acquaintanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.copyButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -261,8 +263,7 @@
             // 
             this.friendslist.AllowUserToAddRows = false;
             this.friendslist.AllowUserToDeleteRows = false;
-            this.friendslist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.friendslist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.friendslist.AutoGenerateColumns = false;
             this.friendslist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -280,8 +281,16 @@
             this.friendslist.ReadOnly = true;
             this.friendslist.RowHeadersWidth = 51;
             this.friendslist.RowTemplate.Height = 24;
-            this.friendslist.Size = new System.Drawing.Size(776, 294);
+            this.friendslist.Size = new System.Drawing.Size(776, 253);
             this.friendslist.TabIndex = 39;
+            // 
+            // birthdayTextBox
+            // 
+            this.birthdayTextBox.Location = new System.Drawing.Point(147, 427);
+            this.birthdayTextBox.Multiline = true;
+            this.birthdayTextBox.Name = "birthdayTextBox";
+            this.birthdayTextBox.Size = new System.Drawing.Size(362, 71);
+            this.birthdayTextBox.TabIndex = 40;
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
@@ -350,12 +359,24 @@
             // 
             this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
+            // copyButton
+            // 
+            this.copyButton.Location = new System.Drawing.Point(540, 444);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(108, 34);
+            this.copyButton.TabIndex = 41;
+            this.copyButton.Text = "Copy";
+            this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 527);
+            this.Controls.Add(this.copyButton);
+            this.Controls.Add(this.birthdayTextBox);
             this.Controls.Add(this.friendslist);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -414,5 +435,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn placeOfWorkOrStudyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn acquaintanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox birthdayTextBox;
+        private System.Windows.Forms.Button copyButton;
     }
 }

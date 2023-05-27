@@ -45,21 +45,6 @@ namespace notebook
                 //LastAddedDate = DateTime.Now
             };
 
-            //if (listoffriends.Persons.Any(p => p.FullName == Person.FullName 
-            //&& p.DateOfBirth == Person.DateOfBirth && p.Address == Person.Address
-            //&& p.PhoneNumber == Person.PhoneNumber && p.PlaceOfWorkOrStudy == Person.PlaceOfWorkOrStudy
-            //&& p.Acquaintance == Person.Acquaintance))
-            //{
-            //    MessageBox.Show("This friend already exists in the list. Change the data before adding.");
-            //    return;
-            //}
-
-            //if (listoffriends.Persons.Any(p => p.PhoneNumber == Person.PhoneNumber))
-            //{
-            //    MessageBox.Show("A friend with the same phone number already exists in the list. Change the data before adding.");
-            //    return;
-            //}
-
             if (!Validator.ValidateNotEmpty(txtFullName.Text))
             {
                 MessageBox.Show("Enter full name");
