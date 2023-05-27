@@ -68,7 +68,7 @@ namespace notebook
                 personBindingSource.ResetBindings(true);
                 listoffriends.IsDirty = true;
 
-                CheckBirthdays(listoffriends);
+                UpdateBirthdayMessage();
             }
         }
 
@@ -87,6 +87,8 @@ namespace notebook
                     listoffriends.Persons.Remove(selectedPerson);
                     personBindingSource.ResetBindings(true);
                     listoffriends.IsDirty = true;
+
+                    UpdateBirthdayMessage();
                 }
             }
         }
@@ -114,7 +116,7 @@ namespace notebook
                 personBindingSource.ResetBindings(true);
                 listoffriends.IsDirty = true;
 
-                CheckBirthdays(listoffriends);
+                UpdateBirthdayMessage();
             }
         }
 
@@ -171,6 +173,8 @@ namespace notebook
             friendslist.AllowUserToAddRows = false;
 
             birthdayTextBox.ReadOnly = true;
+
+            UpdateBirthdayMessage();
             //CheckBirthdays(listoffriends);
             //if (friendslist.Rows.Count > 0 && friendslist.Rows[0].IsNewRow)
             //{
@@ -209,6 +213,11 @@ namespace notebook
                 }
             }
 
+            if (listOfFriends.Persons.Count == 0)
+            {
+                sb.AppendLine("Today is not anyone's birthday. Have a great day!");
+            }
+
             return sb.ToString();
         }
 
@@ -230,6 +239,12 @@ namespace notebook
                 Clipboard.SetText(birthdayMessage);
                 MessageBox.Show("The text was successfully copied to the clipboard!");
             }
+        }
+
+        private void UpdateBirthdayMessage()
+        {
+            string message = CheckBirthdays(listoffriends);
+            birthdayTextBox.Text = message;
         }
     }
 }
