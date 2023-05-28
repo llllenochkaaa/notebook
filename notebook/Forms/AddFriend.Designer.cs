@@ -35,7 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpDateOfBirth = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtPlaceOfWorkOrStudy = new System.Windows.Forms.TextBox();
             this.txtPosition = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtAddress = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,15 +118,9 @@
             this.dtpDateOfBirth.Size = new System.Drawing.Size(316, 40);
             this.dtpDateOfBirth.TabIndex = 7;
             // 
-            // txtAddress
+            // personBindingSource
             // 
-            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personBindingSource, "Address", true));
-            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtAddress.Location = new System.Drawing.Point(262, 253);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(316, 40);
-            this.txtAddress.TabIndex = 9;
+            this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
             // txtPhoneNumber
             // 
@@ -269,9 +263,15 @@
             this.txtName.Size = new System.Drawing.Size(316, 40);
             this.txtName.TabIndex = 3;
             // 
-            // personBindingSource
+            // txtAddress
             // 
-            this.personBindingSource.DataSource = typeof(notebook.Person);
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtAddress.Location = new System.Drawing.Point(262, 251);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtAddress.Size = new System.Drawing.Size(316, 42);
+            this.txtAddress.TabIndex = 9;
+            this.txtAddress.Text = "";
             // 
             // AddFriend
             // 
@@ -279,6 +279,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
             this.ClientSize = new System.Drawing.Size(647, 621);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label2);
@@ -297,10 +298,10 @@
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtPlaceOfWorkOrStudy);
             this.Controls.Add(this.txtPhoneNumber);
-            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.dtpDateOfBirth);
             this.Name = "AddFriend";
             this.Text = "Add";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddFriend_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -314,7 +315,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox dtpDateOfBirth;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtPlaceOfWorkOrStudy;
         private System.Windows.Forms.TextBox txtPosition;
@@ -329,5 +329,6 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.RichTextBox txtAddress;
     }
 }

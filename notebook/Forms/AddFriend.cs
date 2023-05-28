@@ -27,11 +27,14 @@ namespace notebook
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
+        private bool isCancelConfirmed = false;
+
         private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure that you want to cancel adding this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                isCancelConfirmed = true;
                 this.DialogResult = DialogResult.Cancel;
             }
         }
@@ -178,6 +181,20 @@ namespace notebook
             {
                 MessageBox.Show("A new friend has been successfully added!", "Success", MessageBoxButtons.OK);
                 this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void AddFriend_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isCancelConfirmed)
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure that you want to cancel adding this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }

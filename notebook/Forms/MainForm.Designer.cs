@@ -236,9 +236,10 @@
             // 
             this.groupBox1.Controls.Add(this.searchButton);
             this.groupBox1.Controls.Add(this.searchBox);
+            this.groupBox1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(401, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 85);
+            this.groupBox1.Size = new System.Drawing.Size(387, 95);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
@@ -247,11 +248,11 @@
             // 
             this.searchButton.BackColor = System.Drawing.Color.Pink;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchButton.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.searchButton.ForeColor = System.Drawing.Color.Maroon;
-            this.searchButton.Location = new System.Drawing.Point(151, 50);
+            this.searchButton.Location = new System.Drawing.Point(151, 53);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(87, 29);
+            this.searchButton.Size = new System.Drawing.Size(87, 36);
             this.searchButton.TabIndex = 7;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
@@ -261,13 +262,14 @@
             // 
             this.searchBox.Location = new System.Drawing.Point(7, 22);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(374, 22);
+            this.searchBox.Size = new System.Drawing.Size(374, 25);
             this.searchBox.TabIndex = 6;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.sortComboBox);
+            this.groupBox2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(179, 53);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 59);
@@ -278,9 +280,9 @@
             // sortComboBox
             // 
             this.sortComboBox.FormattingEnabled = true;
-            this.sortComboBox.Location = new System.Drawing.Point(40, 20);
+            this.sortComboBox.Location = new System.Drawing.Point(29, 22);
             this.sortComboBox.Name = "sortComboBox";
-            this.sortComboBox.Size = new System.Drawing.Size(121, 24);
+            this.sortComboBox.Size = new System.Drawing.Size(150, 27);
             this.sortComboBox.TabIndex = 4;
             this.sortComboBox.SelectedIndexChanged += new System.EventHandler(this.sortComboBox_SelectedIndexChanged);
             // 

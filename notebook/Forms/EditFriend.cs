@@ -36,11 +36,14 @@ namespace notebook.Forms
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
+        private bool isCancelConfirmed = false;
+
         private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure that you want to cancel editing this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                isCancelConfirmed = true;
                 this.DialogResult = DialogResult.Cancel;
             }
         }
@@ -192,6 +195,17 @@ namespace notebook.Forms
             if (DialogResult == DialogResult.OK)
             {
                 Person.Date = DateTime.Now;
+            }
+
+            if (isCancelConfirmed)
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure that you want to cancel editing this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }
