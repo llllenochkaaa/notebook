@@ -67,11 +67,19 @@ namespace notebook
 
         public static bool ValidateExistingPerson(ListOfFriends listoffriends, Person person)
         {
-            if (listoffriends.Persons.Any(p => p.LastName == person.LastName
-                && p.Name == person.Name && p.Surname == person.Surname
-                && p.DateOfBirth == person.DateOfBirth && p.Address == person.Address
-                && p.PlaceOfWorkOrStudy == person.PlaceOfWorkOrStudy
-                && p.Acquaintance == person.Acquaintance && !p.Equals(person)))
+            int totalFields = 8;
+
+            int matchingFields = listoffriends.Persons.Count(p =>
+                p.LastName == person.LastName &&
+                p.Name == person.Name &&
+                p.Surname == person.Surname &&
+                p.DateOfBirth == person.DateOfBirth &&
+                p.Address == person.Address &&
+                p.PlaceOfWorkOrStudy == person.PlaceOfWorkOrStudy &&
+                p.Position == person.Position &&
+                p.Acquaintance == person.Acquaintance);
+
+            if (matchingFields == totalFields)
             {
                 MessageBox.Show("This friend already exists in the list. Change the data before adding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

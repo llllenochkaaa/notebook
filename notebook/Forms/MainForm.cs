@@ -51,7 +51,7 @@ namespace notebook
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure that you want to clear your friends list?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure that you want to clear your friends list?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 listoffriends.Persons.Clear();
                 personBindingSource.ResetBindings(false);
@@ -80,7 +80,7 @@ namespace notebook
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure that you want to remove the friend from the list?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure that you want to remove the friend from the list?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 var selectedPerson = personBindingSource.Current as Person;
                 if (selectedPerson != null)
@@ -128,7 +128,7 @@ namespace notebook
                 return;
             }
 
-            var res = MessageBox.Show("Do you want to save changes?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            var res = MessageBox.Show("Do you want to save changes?", "Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             switch (res)
             {
                 case DialogResult.Yes:

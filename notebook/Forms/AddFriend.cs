@@ -44,7 +44,6 @@ namespace notebook
                 PlaceOfWorkOrStudy = txtPlaceOfWorkOrStudy.Text,
                 Position = txtPosition.Text,
                 Acquaintance = txtAcquaintance.Text,
-                //LastAddedDate = DateTime.Now
             };
 
             Person.Date = DateTime.Now;
@@ -168,7 +167,7 @@ namespace notebook
             }
 
             this.DialogResult = DialogResult.OK;
-            MessageBox.Show("A new friend has been added!");
+            MessageBox.Show("A new friend has been successfully added!");
         }
     }
 }

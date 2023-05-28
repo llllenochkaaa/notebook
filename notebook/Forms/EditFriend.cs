@@ -53,111 +53,117 @@ namespace notebook.Forms
 
             Person.Date = DateTime.Now;
 
+            DialogResult confirmationResult = MessageBox.Show("Are you sure you want to save the changes?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmationResult == DialogResult.No)
+            {
+                return;
+            }
+
             if (!Validator.ValidateNotEmpty(txtLastName.Text))
             {
-                MessageBox.Show("Enter last name");
+                MessageBox.Show("Enter last name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateLastName(txtLastName.Text))
             {
-                MessageBox.Show("Enter the data correctly");
+                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtName.Text))
             {
-                MessageBox.Show("Enter name");
+                MessageBox.Show("Enter name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateName(txtName.Text))
             {
-                MessageBox.Show("Enter the data correctly");
+                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtSurname.Text))
             {
-                MessageBox.Show("Enter surname");
+                MessageBox.Show("Enter surname", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateSurname(txtSurname.Text))
             {
-                MessageBox.Show("Enter the data correctly");
+                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(dtpDateOfBirth.Text))
             {
-                MessageBox.Show("Enter date of birth");
+                MessageBox.Show("Enter date of birth", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateDateOfBirth(dtpDateOfBirth.Text))
             {
-                MessageBox.Show("Enter the correct date of birth in DD/MM/YY or DD/MM/YYYY format");
+                MessageBox.Show("Enter the correct date of birth in DD/MM/YY or DD/MM/YYYY format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtAddress.Text))
             {
-                MessageBox.Show("Enter the address");
+                MessageBox.Show("Enter the address", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateAddress(txtAddress.Text))
             {
-                MessageBox.Show("Enter the data correctly");
+                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPhoneNumber.Text))
             {
-                MessageBox.Show("Enter a phone number");
+                MessageBox.Show("Enter a phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidatePhoneNumber(txtPhoneNumber.Text))
             {
-                MessageBox.Show("Enter a valid phone number in the format +38XXXXXXXXXX");
+                MessageBox.Show("Enter a valid phone number in the format +38XXXXXXXXXX", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPlaceOfWorkOrStudy.Text))
             {
-                MessageBox.Show("Enter place of work/study");
+                MessageBox.Show("Enter place of work/study", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidatePlaceOfWorkOrStudy(txtPlaceOfWorkOrStudy.Text))
             {
-                MessageBox.Show("Enter the data correctly");
+                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtPosition.Text))
             {
-                MessageBox.Show("Enter the position");
+                MessageBox.Show("Enter the position", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidatePosition(txtPosition.Text))
             {
-                MessageBox.Show("Enter the data correctly");
+                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateNotEmpty(txtAcquaintance.Text))
             {
-                MessageBox.Show("Enter the nature of the acquaintance");
+                MessageBox.Show("Enter the nature of the acquaintance", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!Validator.ValidateAcquaintance(txtAcquaintance.Text))
             {
-                MessageBox.Show("Enter the data correctly");
+                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -171,14 +177,8 @@ namespace notebook.Forms
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Are you sure you want to change the data?", "Confirmation", MessageBoxButtons.YesNo);
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-
             DialogResult = DialogResult.OK;
-            MessageBox.Show("The data has been successfully edited!");
+            MessageBox.Show("The data has been successfully edited!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void EditFriend_FormClosing(object sender, FormClosingEventArgs e)

@@ -65,7 +65,7 @@
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acquaintanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -296,7 +296,7 @@
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn,
             this.positionDataGridViewTextBoxColumn,
             this.acquaintanceDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1});
+            this.dateDataGridViewTextBoxColumn});
             this.friendslist.DataSource = this.personBindingSource;
             this.friendslist.Location = new System.Drawing.Point(20, 141);
             this.friendslist.Name = "friendslist";
@@ -391,13 +391,13 @@
             this.acquaintanceDataGridViewTextBoxColumn.Name = "acquaintanceDataGridViewTextBoxColumn";
             this.acquaintanceDataGridViewTextBoxColumn.Width = 125;
             // 
-            // dataGridViewTextBoxColumn1
+            // dateDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "LastAddedDate";
-            this.dataGridViewTextBoxColumn1.HeaderText = "LastAddedDate";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 125;
             // 
             // MainForm
             // 
@@ -460,6 +460,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView friendslist;
         private System.Windows.Forms.RichTextBox birthdayTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
@@ -469,6 +470,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn placeOfWorkOrStudyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn acquaintanceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
     }
 }
