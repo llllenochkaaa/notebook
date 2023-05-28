@@ -23,7 +23,9 @@ namespace notebook.Forms
             listoffriends = friendsList;
 
             Person = person;
-            txtFullName.Text = person.FullName;
+            txtLastName.Text = person.LastName;
+            txtName.Text = person.Name;
+            txtSurname.Text = person.Surname;
             dtpDateOfBirth.Text = person.DateOfBirth;
             txtAddress.Text = person.Address;
             txtPhoneNumber.Text = person.PhoneNumber;
@@ -39,7 +41,9 @@ namespace notebook.Forms
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            Person.FullName = txtFullName.Text;
+            Person.LastName = txtLastName.Text;
+            Person.Name = txtName.Text;
+            Person.Surname = txtSurname.Text;
             Person.DateOfBirth = dtpDateOfBirth.Text;
             Person.Address = txtAddress.Text;
             Person.PhoneNumber = txtPhoneNumber.Text;
@@ -47,13 +51,37 @@ namespace notebook.Forms
             Person.Position = txtPosition.Text;
             Person.Acquaintance = txtAcquaintance.Text;
 
-            if (!Validator.ValidateNotEmpty(txtFullName.Text))
+            if (!Validator.ValidateNotEmpty(txtLastName.Text))
             {
-                MessageBox.Show("Enter full name");
+                MessageBox.Show("Enter last name");
                 return;
             }
 
-            if (!Validator.ValidateFullName(txtFullName.Text))
+            if (!Validator.ValidateLastName(txtLastName.Text))
+            {
+                MessageBox.Show("Enter the data correctly");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtName.Text))
+            {
+                MessageBox.Show("Enter name");
+                return;
+            }
+
+            if (!Validator.ValidateName(txtName.Text))
+            {
+                MessageBox.Show("Enter the data correctly");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtSurname.Text))
+            {
+                MessageBox.Show("Enter surname");
+                return;
+            }
+
+            if (!Validator.ValidateSurname(txtSurname.Text))
             {
                 MessageBox.Show("Enter the data correctly");
                 return;

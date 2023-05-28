@@ -29,7 +29,6 @@ namespace notebook
             InitializeComponent();
 
             listoffriends = new ListOfFriends();
-            //listoffriends.List();
 
             personBindingSource.DataSource = listoffriends.Persons;
 
@@ -185,7 +184,7 @@ namespace notebook
 
             if (selectedSort == "Alphabet")
             {
-                personBindingSource.DataSource = listoffriends.Persons.OrderBy(p => p.FullName).ToList();
+                personBindingSource.DataSource = listoffriends.Persons.OrderBy(p => p.LastName).ToList();
             }
             //else if (selectedSort == "Last edit date")
             //{
@@ -205,7 +204,7 @@ namespace notebook
                 {
                     if (dateOfBirth.Month == today.Month && dateOfBirth.Day == today.Day)
                     {
-                        sb.AppendLine($"Happy birthday, {person.FullName}! I wish you happiness, health, and a lot of money!");
+                        sb.AppendLine($"Happy birthday, {person.LastName} {person.Name} {person.Surname}! I wish you happiness, health, and a lot of money!");
                     }
                 }
             }
@@ -242,6 +241,11 @@ namespace notebook
         {
             string message = CheckBirthdays(listoffriends);
             birthdayTextBox.Text = message;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

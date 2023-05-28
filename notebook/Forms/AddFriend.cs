@@ -35,7 +35,9 @@ namespace notebook
 
             Person = new Person
             {
-                FullName = txtFullName.Text,
+                LastName = txtLastName.Text,
+                Name = txtName.Text,
+                Surname = txtSurname.Text,
                 DateOfBirth = dtpDateOfBirth.Text,
                 Address = txtAddress.Text,
                 PhoneNumber = txtPhoneNumber.Text,
@@ -45,13 +47,37 @@ namespace notebook
                 //LastAddedDate = DateTime.Now
             };
 
-            if (!Validator.ValidateNotEmpty(txtFullName.Text))
+            if (!Validator.ValidateNotEmpty(txtLastName.Text))
             {
-                MessageBox.Show("Enter full name");
+                MessageBox.Show("Enter last name");
                 return;
             }
 
-            if (!Validator.ValidateFullName(txtFullName.Text))
+            if (!Validator.ValidateLastName(txtLastName.Text))
+            {
+                MessageBox.Show("Enter the data correctly");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtName.Text))
+            {
+                MessageBox.Show("Enter name");
+                return;
+            }
+
+            if (!Validator.ValidateName(txtName.Text))
+            {
+                MessageBox.Show("Enter the data correctly");
+                return;
+            }
+
+            if (!Validator.ValidateNotEmpty(txtSurname.Text))
+            {
+                MessageBox.Show("Enter surname");
+                return;
+            }
+
+            if (!Validator.ValidateSurname(txtSurname.Text))
             {
                 MessageBox.Show("Enter the data correctly");
                 return;

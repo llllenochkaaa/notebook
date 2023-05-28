@@ -12,9 +12,19 @@ namespace notebook
 {
     public class Validator
     {
-        public static bool ValidateFullName(string fullName)
+        public static bool ValidateLastName(string lastName)
         {
-            return !string.IsNullOrWhiteSpace(fullName) && fullName.Length <= 50;
+            return !string.IsNullOrWhiteSpace(lastName) && lastName.Length <= 50;
+        }
+
+        public static bool ValidateName(string name)
+        {
+            return !string.IsNullOrWhiteSpace(name) && name.Length <= 50;
+        }
+
+        public static bool ValidateSurname(string surname)
+        {
+            return !string.IsNullOrWhiteSpace(surname) && surname.Length <= 50;
         }
 
         public static bool ValidateAddress(string address)
@@ -57,7 +67,8 @@ namespace notebook
 
         public static bool ValidateExistingPerson(ListOfFriends listoffriends, Person person)
         {
-            if (listoffriends.Persons.Any(p => p.FullName == person.FullName
+            if (listoffriends.Persons.Any(p => p.LastName == person.LastName
+                && p.Name == person.Name && p.Surname == person.Surname
                 && p.DateOfBirth == person.DateOfBirth && p.Address == person.Address
                 && p.PlaceOfWorkOrStudy == person.PlaceOfWorkOrStudy
                 && p.Acquaintance == person.Acquaintance && !p.Equals(person)))

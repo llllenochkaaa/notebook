@@ -19,33 +19,15 @@ namespace notebook.Models
 
         public List<Person> Persons { get; set; }
 
-        public void InitializeList()
-        {
-            Persons = new List<Person>();
-            //for (int i = 0; i < n; i++)
-            //{
-            //    var person = new Person
-            //    {
-            //        FullName = "FullName" + i,
-            //        DateOfBirth = "DateOfBirth" + i,
-            //        Address = "Address" + i,
-            //        PhoneNumber = "PhoneNumber" + i,
-            //        PlaceOfWorkOrStudy = "PlaceOfWorkOrStudy" + i,
-            //        Position = "Position" + i,
-            //        Acquaintance = "Acquaintance" + i
-            //    };
-            //    Persons.Add(person);
-            //}
-            //IsDirty = true;
-        }
-
         internal List<Person> SearchFriends(string line)
         {
             List<Person> result = new List<Person>();
             var text = line.ToLower();
             foreach (Person person in Persons)
             {
-                if (person.FullName.ToLower().IndexOf(text) > -1 || 
+                if (person.LastName.ToLower().IndexOf(text) > -1 ||
+                person.Name.ToLower().IndexOf(text) > -1 ||
+                person.Surname.ToLower().IndexOf(text) > -1 ||
                 person.PlaceOfWorkOrStudy.ToLower().IndexOf(text) > -1 || 
                 person.Position.ToLower().IndexOf(text) > -1 || 
                 person.Acquaintance.ToLower().IndexOf(text) > -1)
