@@ -288,6 +288,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "EditFriend";
             this.Text = "Edit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditFriend_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

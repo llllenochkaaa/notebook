@@ -51,6 +51,8 @@ namespace notebook.Forms
             Person.Position = txtPosition.Text;
             Person.Acquaintance = txtAcquaintance.Text;
 
+            Person.Date = DateTime.Now;
+
             if (!Validator.ValidateNotEmpty(txtLastName.Text))
             {
                 MessageBox.Show("Enter last name");
@@ -177,6 +179,14 @@ namespace notebook.Forms
 
             DialogResult = DialogResult.OK;
             MessageBox.Show("The data has been successfully edited!");
+        }
+
+        private void EditFriend_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (DialogResult == DialogResult.OK)
+            {
+                Person.Date = DateTime.Now;
+            }
         }
     }
 }

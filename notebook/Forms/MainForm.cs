@@ -51,7 +51,7 @@ namespace notebook
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure that you want to clear your friends list?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure that you want to clear your friends list?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 listoffriends.Persons.Clear();
                 personBindingSource.ResetBindings(false);
@@ -186,10 +186,10 @@ namespace notebook
             {
                 personBindingSource.DataSource = listoffriends.Persons.OrderBy(p => p.LastName).ToList();
             }
-            //else if (selectedSort == "Last edit date")
-            //{
-            //    personBindingSource.DataSource = listoffriends.Persons.OrderByDescending(p => p.LastAddedDate).ToList();
-            //}
+            else if (selectedSort == "Last edit date")
+            {
+                personBindingSource.DataSource = listoffriends.Persons.OrderByDescending(p => p.Date).ToList();
+            }
         }
 
         public static string CheckBirthdays(ListOfFriends listOfFriends)

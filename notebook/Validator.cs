@@ -73,7 +73,7 @@ namespace notebook
                 && p.PlaceOfWorkOrStudy == person.PlaceOfWorkOrStudy
                 && p.Acquaintance == person.Acquaintance && !p.Equals(person)))
             {
-                MessageBox.Show("This friend already exists in the list. Change the data before adding.");
+                MessageBox.Show("This friend already exists in the list. Change the data before adding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -84,7 +84,7 @@ namespace notebook
         {
             if (listoffriends.Persons.Any(p => p.PhoneNumber == person.PhoneNumber && !p.Equals(person)))
             {
-                MessageBox.Show("A friend with the same phone number already exists in the list. Change the data before adding.");
+                MessageBox.Show("A friend with the same phone number already exists in the list. Change the data before adding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
