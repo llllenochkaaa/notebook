@@ -60,7 +60,7 @@
             this.cancelButton.Location = new System.Drawing.Point(493, 560);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(142, 49);
-            this.cancelButton.TabIndex = 11;
+            this.cancelButton.TabIndex = 19;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -73,7 +73,7 @@
             this.label7.Location = new System.Drawing.Point(83, 515);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 24);
-            this.label7.TabIndex = 24;
+            this.label7.TabIndex = 16;
             this.label7.Text = "Acquaintance";
             // 
             // label6
@@ -84,7 +84,7 @@
             this.label6.Location = new System.Drawing.Point(141, 453);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 24);
-            this.label6.TabIndex = 25;
+            this.label6.TabIndex = 14;
             this.label6.Text = "Position";
             // 
             // label5
@@ -95,7 +95,7 @@
             this.label5.Location = new System.Drawing.Point(18, 393);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(217, 24);
-            this.label5.TabIndex = 26;
+            this.label5.TabIndex = 12;
             this.label5.Text = "Place of work/study";
             // 
             // label4
@@ -106,7 +106,7 @@
             this.label4.Location = new System.Drawing.Point(75, 336);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 24);
-            this.label4.TabIndex = 27;
+            this.label4.TabIndex = 10;
             this.label4.Text = "Phone number";
             // 
             // label1
@@ -117,7 +117,7 @@
             this.label1.Location = new System.Drawing.Point(159, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 24);
-            this.label1.TabIndex = 28;
+            this.label1.TabIndex = 8;
             this.label1.Text = "Adress";
             // 
             // label3
@@ -128,7 +128,7 @@
             this.label3.Location = new System.Drawing.Point(56, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(179, 24);
-            this.label3.TabIndex = 29;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Date of birthday";
             // 
             // label2
@@ -139,7 +139,7 @@
             this.label2.Location = new System.Drawing.Point(159, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 24);
-            this.label2.TabIndex = 30;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Name:";
             // 
             // okButton
@@ -152,7 +152,7 @@
             this.okButton.Location = new System.Drawing.Point(323, 560);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(142, 49);
-            this.okButton.TabIndex = 10;
+            this.okButton.TabIndex = 18;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
@@ -164,7 +164,7 @@
             this.txtAcquaintance.Multiline = true;
             this.txtAcquaintance.Name = "txtAcquaintance";
             this.txtAcquaintance.Size = new System.Drawing.Size(316, 40);
-            this.txtAcquaintance.TabIndex = 9;
+            this.txtAcquaintance.TabIndex = 17;
             // 
             // txtPosition
             // 
@@ -173,7 +173,7 @@
             this.txtPosition.Multiline = true;
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(316, 40);
-            this.txtPosition.TabIndex = 8;
+            this.txtPosition.TabIndex = 15;
             // 
             // txtPlaceOfWorkOrStudy
             // 
@@ -182,7 +182,7 @@
             this.txtPlaceOfWorkOrStudy.Multiline = true;
             this.txtPlaceOfWorkOrStudy.Name = "txtPlaceOfWorkOrStudy";
             this.txtPlaceOfWorkOrStudy.Size = new System.Drawing.Size(316, 40);
-            this.txtPlaceOfWorkOrStudy.TabIndex = 7;
+            this.txtPlaceOfWorkOrStudy.TabIndex = 13;
             // 
             // txtPhoneNumber
             // 
@@ -191,7 +191,7 @@
             this.txtPhoneNumber.Multiline = true;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(316, 40);
-            this.txtPhoneNumber.TabIndex = 6;
+            this.txtPhoneNumber.TabIndex = 11;
             // 
             // txtAddress
             // 
@@ -200,7 +200,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(316, 40);
-            this.txtAddress.TabIndex = 5;
+            this.txtAddress.TabIndex = 9;
             // 
             // dtpDateOfBirth
             // 
@@ -209,7 +209,7 @@
             this.dtpDateOfBirth.Multiline = true;
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(316, 40);
-            this.dtpDateOfBirth.TabIndex = 4;
+            this.dtpDateOfBirth.TabIndex = 7;
             // 
             // txtName
             // 
@@ -218,7 +218,7 @@
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(316, 40);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 3;
             // 
             // label8
             // 
@@ -228,7 +228,7 @@
             this.label8.Location = new System.Drawing.Point(126, 147);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 24);
-            this.label8.TabIndex = 40;
+            this.label8.TabIndex = 4;
             this.label8.Text = "Surname:";
             // 
             // txtSurname
@@ -238,7 +238,7 @@
             this.txtSurname.Multiline = true;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(316, 40);
-            this.txtSurname.TabIndex = 3;
+            this.txtSurname.TabIndex = 5;
             // 
             // label9
             // 
@@ -248,7 +248,7 @@
             this.label9.Location = new System.Drawing.Point(105, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 24);
-            this.label9.TabIndex = 42;
+            this.label9.TabIndex = 0;
             this.label9.Text = "Last name:";
             // 
             // txtLastName
@@ -258,7 +258,7 @@
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(316, 40);
-            this.txtLastName.TabIndex = 0;
+            this.txtLastName.TabIndex = 1;
             // 
             // EditFriend
             // 

@@ -23,11 +23,17 @@ namespace notebook
         {
             InitializeComponent();
             this.listoffriends = friendsList;
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult result = MessageBox.Show("Are you sure that you want to cancel adding this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -166,8 +172,13 @@ namespace notebook
                 return;
             }
 
-            this.DialogResult = DialogResult.OK;
-            MessageBox.Show("A new friend has been successfully added!");
+            DialogResult result = MessageBox.Show("Do you want to add this person to the friends list?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("A new friend has been successfully added!", "Success", MessageBoxButtons.OK);
+                this.DialogResult = DialogResult.OK;
+            }
         }
     }
 }

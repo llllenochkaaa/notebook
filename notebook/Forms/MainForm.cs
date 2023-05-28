@@ -33,11 +33,19 @@ namespace notebook
             personBindingSource.DataSource = listoffriends.Persons;
 
             Shown += MainForm_Shown;
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataAccess.Save(listoffriends);
+            DialogResult result = MessageBox.Show("Do you want to save the data?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                DataAccess.Save(listoffriends);
+                MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK);
+            }
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +63,8 @@ namespace notebook
             {
                 listoffriends.Persons.Clear();
                 personBindingSource.ResetBindings(false);
+
+                UpdateBirthdayMessage();
             }
         }
 
@@ -75,7 +85,12 @@ namespace notebook
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show("Are you sure that you want to exit the program?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,6 +154,16 @@ namespace notebook
                 case DialogResult.Cancel:
                     e.Cancel = true;
                     break;
+            }
+
+            if (!e.Cancel)
+            {
+                DialogResult exitResult = MessageBox.Show("Are you sure that you want to exit the program?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (exitResult == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 
@@ -241,11 +266,6 @@ namespace notebook
         {
             string message = CheckBirthdays(listoffriends);
             birthdayTextBox.Text = message;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void viewInfoToolStripMenuItem_Click(object sender, EventArgs e)

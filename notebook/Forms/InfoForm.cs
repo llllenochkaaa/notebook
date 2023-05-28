@@ -30,8 +30,6 @@ namespace notebook.Forms
                 textBox.ReadOnly = true;
             }
 
-            //dtpDateOfBirth.Enabled = false;
-
             txtLastName.Text = person.LastName;
             txtName.Text = person.Name;
             txtSurname.Text = person.Surname;
@@ -41,6 +39,8 @@ namespace notebook.Forms
             txtPlaceOfWorkOrStudy.Text = person.PlaceOfWorkOrStudy;
             txtPosition.Text = person.Position;
             txtAcquaintance.Text = person.Acquaintance;
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void okButton_Click(object sender, EventArgs e)

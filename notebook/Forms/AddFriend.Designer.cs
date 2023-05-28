@@ -34,7 +34,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtpDateOfBirth = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             this.label4.Location = new System.Drawing.Point(81, 336);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 24);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 10;
             this.label4.Text = "Phone number";
             // 
             // label5
@@ -83,7 +83,7 @@
             this.label5.Location = new System.Drawing.Point(24, 393);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(217, 24);
-            this.label5.TabIndex = 6;
+            this.label5.TabIndex = 12;
             this.label5.Text = "Place of work/study";
             // 
             // label6
@@ -94,7 +94,7 @@
             this.label6.Location = new System.Drawing.Point(147, 453);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 24);
-            this.label6.TabIndex = 6;
+            this.label6.TabIndex = 14;
             this.label6.Text = "Position";
             // 
             // label7
@@ -105,12 +105,8 @@
             this.label7.Location = new System.Drawing.Point(89, 515);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 24);
-            this.label7.TabIndex = 6;
+            this.label7.TabIndex = 16;
             this.label7.Text = "Acquaintance";
-            // 
-            // personBindingSource
-            // 
-            this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
             // dtpDateOfBirth
             // 
@@ -120,7 +116,7 @@
             this.dtpDateOfBirth.Multiline = true;
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(316, 40);
-            this.dtpDateOfBirth.TabIndex = 16;
+            this.dtpDateOfBirth.TabIndex = 7;
             // 
             // txtAddress
             // 
@@ -130,7 +126,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(316, 40);
-            this.txtAddress.TabIndex = 17;
+            this.txtAddress.TabIndex = 9;
             // 
             // txtPhoneNumber
             // 
@@ -140,7 +136,7 @@
             this.txtPhoneNumber.Multiline = true;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(316, 40);
-            this.txtPhoneNumber.TabIndex = 18;
+            this.txtPhoneNumber.TabIndex = 11;
             // 
             // txtPlaceOfWorkOrStudy
             // 
@@ -150,7 +146,7 @@
             this.txtPlaceOfWorkOrStudy.Multiline = true;
             this.txtPlaceOfWorkOrStudy.Name = "txtPlaceOfWorkOrStudy";
             this.txtPlaceOfWorkOrStudy.Size = new System.Drawing.Size(316, 40);
-            this.txtPlaceOfWorkOrStudy.TabIndex = 19;
+            this.txtPlaceOfWorkOrStudy.TabIndex = 13;
             // 
             // txtPosition
             // 
@@ -160,7 +156,7 @@
             this.txtPosition.Multiline = true;
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(316, 40);
-            this.txtPosition.TabIndex = 20;
+            this.txtPosition.TabIndex = 15;
             // 
             // txtAcquaintance
             // 
@@ -170,7 +166,7 @@
             this.txtAcquaintance.Multiline = true;
             this.txtAcquaintance.Name = "txtAcquaintance";
             this.txtAcquaintance.Size = new System.Drawing.Size(316, 40);
-            this.txtAcquaintance.TabIndex = 21;
+            this.txtAcquaintance.TabIndex = 17;
             // 
             // okButton
             // 
@@ -182,7 +178,7 @@
             this.okButton.Location = new System.Drawing.Point(325, 560);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(142, 49);
-            this.okButton.TabIndex = 22;
+            this.okButton.TabIndex = 18;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
@@ -195,7 +191,7 @@
             this.label1.Location = new System.Drawing.Point(165, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 24);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 8;
             this.label1.Text = "Adress";
             // 
             // cancelButton
@@ -208,7 +204,7 @@
             this.cancelButton.Location = new System.Drawing.Point(493, 560);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(142, 49);
-            this.cancelButton.TabIndex = 23;
+            this.cancelButton.TabIndex = 19;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -221,7 +217,7 @@
             this.label8.Location = new System.Drawing.Point(132, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 24);
-            this.label8.TabIndex = 46;
+            this.label8.TabIndex = 4;
             this.label8.Text = "Surname:";
             // 
             // txtSurname
@@ -231,7 +227,7 @@
             this.txtSurname.Multiline = true;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(316, 40);
-            this.txtSurname.TabIndex = 47;
+            this.txtSurname.TabIndex = 5;
             // 
             // label9
             // 
@@ -241,7 +237,7 @@
             this.label9.Location = new System.Drawing.Point(111, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 24);
-            this.label9.TabIndex = 50;
+            this.label9.TabIndex = 0;
             this.label9.Text = "Last name:";
             // 
             // txtLastName
@@ -251,7 +247,7 @@
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(316, 40);
-            this.txtLastName.TabIndex = 51;
+            this.txtLastName.TabIndex = 1;
             // 
             // label2
             // 
@@ -261,7 +257,7 @@
             this.label2.Location = new System.Drawing.Point(165, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 24);
-            this.label2.TabIndex = 48;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Name:";
             // 
             // txtName
@@ -271,7 +267,11 @@
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(316, 40);
-            this.txtName.TabIndex = 49;
+            this.txtName.TabIndex = 3;
+            // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
             // AddFriend
             // 

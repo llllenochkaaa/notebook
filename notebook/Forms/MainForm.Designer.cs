@@ -46,6 +46,8 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.searchButton = new System.Windows.Forms.Button();
@@ -55,8 +57,6 @@
             this.copyButton = new System.Windows.Forms.Button();
             this.friendslist = new System.Windows.Forms.DataGridView();
             this.birthdayTextBox = new System.Windows.Forms.RichTextBox();
-            this.viewInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,7 +84,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(131, 40);
-            this.panel1.TabIndex = 27;
+            this.panel1.TabIndex = 2;
             // 
             // Title
             // 
@@ -94,7 +94,7 @@
             this.Title.Location = new System.Drawing.Point(3, 7);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(118, 24);
-            this.Title.TabIndex = 6;
+            this.Title.TabIndex = 1;
             this.Title.Text = "My friends";
             // 
             // menuStrip
@@ -108,7 +108,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 31);
-            this.menuStrip.TabIndex = 34;
+            this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
@@ -192,31 +192,43 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(164, 28);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(221, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(161, 6);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(164, 28);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(221, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(161, 6);
+            // 
+            // viewInfoToolStripMenuItem
+            // 
+            this.viewInfoToolStripMenuItem.Name = "viewInfoToolStripMenuItem";
+            this.viewInfoToolStripMenuItem.Size = new System.Drawing.Size(164, 28);
+            this.viewInfoToolStripMenuItem.Text = "View info";
+            this.viewInfoToolStripMenuItem.Click += new System.EventHandler(this.viewInfoToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(161, 6);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(164, 28);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -227,7 +239,7 @@
             this.groupBox1.Location = new System.Drawing.Point(401, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(387, 85);
-            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
@@ -240,7 +252,7 @@
             this.searchButton.Location = new System.Drawing.Point(151, 50);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(87, 29);
-            this.searchButton.TabIndex = 1;
+            this.searchButton.TabIndex = 7;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
@@ -250,7 +262,7 @@
             this.searchBox.Location = new System.Drawing.Point(7, 22);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(374, 22);
-            this.searchBox.TabIndex = 0;
+            this.searchBox.TabIndex = 6;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // groupBox2
@@ -259,7 +271,7 @@
             this.groupBox2.Location = new System.Drawing.Point(179, 53);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 59);
-            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sort by:";
             // 
@@ -269,7 +281,7 @@
             this.sortComboBox.Location = new System.Drawing.Point(40, 20);
             this.sortComboBox.Name = "sortComboBox";
             this.sortComboBox.Size = new System.Drawing.Size(121, 24);
-            this.sortComboBox.TabIndex = 0;
+            this.sortComboBox.TabIndex = 4;
             this.sortComboBox.SelectedIndexChanged += new System.EventHandler(this.sortComboBox_SelectedIndexChanged);
             // 
             // copyButton
@@ -281,7 +293,7 @@
             this.copyButton.Location = new System.Drawing.Point(531, 425);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(108, 34);
-            this.copyButton.TabIndex = 41;
+            this.copyButton.TabIndex = 10;
             this.copyButton.Text = "Copy";
             this.copyButton.UseVisualStyleBackColor = false;
             this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
@@ -316,20 +328,8 @@
             this.birthdayTextBox.Name = "birthdayTextBox";
             this.birthdayTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.birthdayTextBox.Size = new System.Drawing.Size(323, 77);
-            this.birthdayTextBox.TabIndex = 43;
+            this.birthdayTextBox.TabIndex = 9;
             this.birthdayTextBox.Text = "";
-            // 
-            // viewInfoToolStripMenuItem
-            // 
-            this.viewInfoToolStripMenuItem.Name = "viewInfoToolStripMenuItem";
-            this.viewInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
-            this.viewInfoToolStripMenuItem.Text = "View info";
-            this.viewInfoToolStripMenuItem.Click += new System.EventHandler(this.viewInfoToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem7
-            // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(221, 6);
             // 
             // lastNameDataGridViewTextBoxColumn
             // 

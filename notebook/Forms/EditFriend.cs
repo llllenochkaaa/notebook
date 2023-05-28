@@ -32,11 +32,17 @@ namespace notebook.Forms
             txtPlaceOfWorkOrStudy.Text = person.PlaceOfWorkOrStudy;
             txtPosition.Text = person.Position;
             txtAcquaintance.Text = person.Acquaintance;
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult result = MessageBox.Show("Are you sure that you want to cancel editing this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
         }
 
         private void okButton_Click(object sender, EventArgs e)
