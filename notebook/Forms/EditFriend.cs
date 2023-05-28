@@ -53,12 +53,6 @@ namespace notebook.Forms
 
             Person.Date = DateTime.Now;
 
-            DialogResult confirmationResult = MessageBox.Show("Are you sure you want to save the changes?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirmationResult == DialogResult.No)
-            {
-                return;
-            }
-
             if (!Validator.ValidateNotEmpty(txtLastName.Text))
             {
                 MessageBox.Show("Enter last name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -177,8 +171,14 @@ namespace notebook.Forms
                 return;
             }
 
+            DialogResult confirmationResult = MessageBox.Show("Are you sure you want to save the changes?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmationResult == DialogResult.No)
+            {
+                return;
+            }
+
             DialogResult = DialogResult.OK;
-            MessageBox.Show("The data has been successfully edited!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("The data has been successfully edited!", "Success", MessageBoxButtons.OK);
         }
 
         private void EditFriend_FormClosing(object sender, FormClosingEventArgs e)

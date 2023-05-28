@@ -247,5 +247,25 @@ namespace notebook
         {
 
         }
+
+        private void viewInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var selectedRow = friendslist.CurrentRow;
+
+            if (selectedRow == null)
+            {
+                return;
+            }
+
+            var selectedPerson = selectedRow.DataBoundItem as Person;
+
+            if (selectedPerson == null)
+            {
+                return;
+            }
+
+            InfoForm form = new InfoForm(selectedPerson, listoffriends);
+            form.Show();
+        }
     }
 }
