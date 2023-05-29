@@ -186,9 +186,13 @@ namespace notebook.Forms
                 return;
             }
 
+            isSaveConfirmed = true;
+
             DialogResult = DialogResult.OK;
             MessageBox.Show("The data has been successfully edited!", "Success", MessageBoxButtons.OK);
         }
+
+        private bool isSaveConfirmed = false;
 
         private void EditFriend_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -198,6 +202,11 @@ namespace notebook.Forms
             }
 
             if (isCancelConfirmed)
+            {
+                return;
+            }
+
+            if (isSaveConfirmed)
             {
                 return;
             }

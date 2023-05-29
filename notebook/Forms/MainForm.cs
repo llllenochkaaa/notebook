@@ -221,6 +221,7 @@ namespace notebook
         {
             DateTime today = DateTime.Today;
             StringBuilder sb = new StringBuilder();
+            bool hasBirthdays = false;
 
             foreach (Person person in listOfFriends.Persons)
             {
@@ -230,11 +231,12 @@ namespace notebook
                     if (dateOfBirth.Month == today.Month && dateOfBirth.Day == today.Day)
                     {
                         sb.AppendLine($"Happy birthday, {person.LastName} {person.Name} {person.Surname}! I wish you happiness, health, and a lot of money!");
+                        hasBirthdays = true;
                     }
                 }
             }
 
-            if (listOfFriends.Persons.Count == 0)
+            if (listOfFriends.Persons.Count == 0 || !hasBirthdays)
             {
                 sb.AppendLine("Today is not anyone's birthday. Have a great day!");
             }
