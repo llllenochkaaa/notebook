@@ -25,10 +25,10 @@ namespace notebook.Forms
 
             Person = person;
 
-            foreach (var textBox in Controls.OfType<TextBox>())
-            {
-                textBox.ReadOnly = true;
-            }
+            //foreach (var textBox in Controls.OfType<TextBox>())
+            //{
+            //    textBox.ReadOnly = true;
+            //}
 
             txtLastName.Text = person.LastName;
             txtName.Text = person.Name;
@@ -39,8 +39,6 @@ namespace notebook.Forms
             txtPlaceOfWorkOrStudy.Text = person.PlaceOfWorkOrStudy;
             txtPosition.Text = person.Position;
             txtAcquaintance.Text = person.Acquaintance;
-
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void okButton_Click(object sender, EventArgs e)

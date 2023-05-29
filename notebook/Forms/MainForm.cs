@@ -33,8 +33,6 @@ namespace notebook
             personBindingSource.DataSource = listoffriends.Persons;
 
             Shown += MainForm_Shown;
-
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,8 +49,8 @@ namespace notebook
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataAccess.Load(listoffriends);
-            personBindingSource.DataSource = listoffriends.Persons;
             personBindingSource.ResetBindings(true);
+            personBindingSource.DataSource = listoffriends.Persons;
 
             UpdateBirthdayMessage();
         }
@@ -62,6 +60,7 @@ namespace notebook
             if (MessageBox.Show("Are you sure that you want to clear your friends list?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 listoffriends.Persons.Clear();
+
                 personBindingSource.ResetBindings(false);
 
                 UpdateBirthdayMessage();
@@ -172,20 +171,9 @@ namespace notebook
             personBindingSource.DataSource = result;
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            searchBox_TextChanged(null, null);
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
-            sortComboBox.Items.Insert(0, "Alphabet");
-            sortComboBox.Items.Add("Last edit date");
-
-            sortComboBox.SelectedIndex = 0;
-            sortComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            //listoffriends = new ListOfFriends();
+            listoffriends = new ListOfFriends();
             DataAccess.Load(listoffriends);
             personBindingSource.DataSource = listoffriends.Persons;
 
@@ -195,25 +183,6 @@ namespace notebook
             birthdayTextBox.ReadOnly = true;
 
             UpdateBirthdayMessage();
-            //CheckBirthdays(listoffriends);
-            //if (friendslist.Rows.Count > 0 && friendslist.Rows[0].IsNewRow)
-            //{
-            //    friendslist.Rows.RemoveAt(0);
-            //}
-        }
-
-        private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedSort = sortComboBox.SelectedItem.ToString();
-
-            if (selectedSort == "Alphabet")
-            {
-                personBindingSource.DataSource = listoffriends.Persons.OrderBy(p => p.LastName).ToList();
-            }
-            else if (selectedSort == "Last edit date")
-            {
-                personBindingSource.DataSource = listoffriends.Persons.OrderByDescending(p => p.Date).ToList();
-            }
         }
 
         public static string CheckBirthdays(ListOfFriends listOfFriends)
@@ -287,6 +256,22 @@ namespace notebook
 
             InfoForm form = new InfoForm(selectedPerson, listoffriends);
             form.Show();
+        }
+
+        private void alphabetSortButton_Click(object sender, EventArgs e)
+        {
+            var sortedList = listoffriends.Persons.OrderBy(p => p.LastName).ToList();
+            listoffriends.Persons = sortedList;
+            personBindingSource.DataSource = sortedList;
+            personBindingSource.ResetBindings(false);
+        }
+
+        private void dateSortButton_Click(object sender, EventArgs e)
+        {
+            var sortedList = listoffriends.Persons.OrderByDescending(p => p.Date).ToList();
+            listoffriends.Persons = sortedList;
+            personBindingSource.DataSource = sortedList;
+            personBindingSource.ResetBindings(false);
         }
     }
 }

@@ -34,7 +34,6 @@
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtPlaceOfWorkOrStudy = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.dtpDateOfBirth = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.okButton = new System.Windows.Forms.Button();
+            this.txtAddress = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // txtLastName
@@ -55,6 +55,7 @@
             this.txtLastName.Location = new System.Drawing.Point(242, 10);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(316, 40);
             this.txtLastName.TabIndex = 1;
             // 
@@ -64,6 +65,7 @@
             this.txtSurname.Location = new System.Drawing.Point(242, 129);
             this.txtSurname.Multiline = true;
             this.txtSurname.Name = "txtSurname";
+            this.txtSurname.ReadOnly = true;
             this.txtSurname.Size = new System.Drawing.Size(316, 40);
             this.txtSurname.TabIndex = 5;
             // 
@@ -73,6 +75,7 @@
             this.txtAcquaintance.Location = new System.Drawing.Point(242, 497);
             this.txtAcquaintance.Multiline = true;
             this.txtAcquaintance.Name = "txtAcquaintance";
+            this.txtAcquaintance.ReadOnly = true;
             this.txtAcquaintance.Size = new System.Drawing.Size(316, 40);
             this.txtAcquaintance.TabIndex = 17;
             // 
@@ -82,6 +85,7 @@
             this.txtPosition.Location = new System.Drawing.Point(242, 435);
             this.txtPosition.Multiline = true;
             this.txtPosition.Name = "txtPosition";
+            this.txtPosition.ReadOnly = true;
             this.txtPosition.Size = new System.Drawing.Size(316, 40);
             this.txtPosition.TabIndex = 15;
             // 
@@ -91,6 +95,7 @@
             this.txtPlaceOfWorkOrStudy.Location = new System.Drawing.Point(242, 375);
             this.txtPlaceOfWorkOrStudy.Multiline = true;
             this.txtPlaceOfWorkOrStudy.Name = "txtPlaceOfWorkOrStudy";
+            this.txtPlaceOfWorkOrStudy.ReadOnly = true;
             this.txtPlaceOfWorkOrStudy.Size = new System.Drawing.Size(316, 40);
             this.txtPlaceOfWorkOrStudy.TabIndex = 13;
             // 
@@ -100,17 +105,9 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(242, 318);
             this.txtPhoneNumber.Multiline = true;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.ReadOnly = true;
             this.txtPhoneNumber.Size = new System.Drawing.Size(316, 40);
             this.txtPhoneNumber.TabIndex = 11;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtAddress.Location = new System.Drawing.Point(242, 251);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(316, 40);
-            this.txtAddress.TabIndex = 9;
             // 
             // dtpDateOfBirth
             // 
@@ -118,6 +115,7 @@
             this.dtpDateOfBirth.Location = new System.Drawing.Point(242, 189);
             this.dtpDateOfBirth.Multiline = true;
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.ReadOnly = true;
             this.dtpDateOfBirth.Size = new System.Drawing.Size(316, 40);
             this.dtpDateOfBirth.TabIndex = 7;
             // 
@@ -127,6 +125,7 @@
             this.txtName.Location = new System.Drawing.Point(242, 70);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(316, 40);
             this.txtName.TabIndex = 3;
             // 
@@ -244,12 +243,24 @@
             this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtAddress.Location = new System.Drawing.Point(242, 249);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtAddress.Size = new System.Drawing.Size(316, 42);
+            this.txtAddress.TabIndex = 9;
+            this.txtAddress.Text = "";
+            // 
             // InfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
             this.ClientSize = new System.Drawing.Size(590, 626);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -266,9 +277,10 @@
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtPlaceOfWorkOrStudy);
             this.Controls.Add(this.txtPhoneNumber);
-            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.txtName);
+            this.MaximumSize = new System.Drawing.Size(608, 673);
+            this.MinimumSize = new System.Drawing.Size(608, 673);
             this.Name = "InfoForm";
             this.Text = "Info";
             this.ResumeLayout(false);
@@ -284,7 +296,6 @@
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtPlaceOfWorkOrStudy;
         private System.Windows.Forms.TextBox txtPhoneNumber;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox dtpDateOfBirth;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label9;
@@ -297,5 +308,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.RichTextBox txtAddress;
     }
 }

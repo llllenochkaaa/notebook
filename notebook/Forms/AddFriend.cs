@@ -23,8 +23,6 @@ namespace notebook
         {
             InitializeComponent();
             this.listoffriends = friendsList;
-
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private bool isCancelConfirmed = false;

@@ -50,13 +50,9 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.searchButton = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.copyButton = new System.Windows.Forms.Button();
             this.friendslist = new System.Windows.Forms.DataGridView();
-            this.birthdayTextBox = new System.Windows.Forms.RichTextBox();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,12 +64,16 @@
             this.acquaintanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.birthdayTextBox = new System.Windows.Forms.RichTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateSortButton = new System.Windows.Forms.Button();
+            this.alphabetSortButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.friendslist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,7 +81,7 @@
             this.panel1.BackColor = System.Drawing.Color.Pink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Title);
-            this.panel1.Location = new System.Drawing.Point(12, 62);
+            this.panel1.Location = new System.Drawing.Point(12, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(131, 40);
             this.panel1.TabIndex = 2;
@@ -107,7 +107,7 @@
             this.friendToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 31);
+            this.menuStrip.Size = new System.Drawing.Size(1062, 31);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -234,57 +234,24 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.searchButton);
             this.groupBox1.Controls.Add(this.searchBox);
-            this.groupBox1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(401, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 95);
+            this.groupBox1.Size = new System.Drawing.Size(387, 113);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
-            // searchButton
-            // 
-            this.searchButton.BackColor = System.Drawing.Color.Pink;
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchButton.ForeColor = System.Drawing.Color.Maroon;
-            this.searchButton.Location = new System.Drawing.Point(151, 53);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(87, 36);
-            this.searchButton.TabIndex = 7;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(7, 22);
+            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBox.Location = new System.Drawing.Point(7, 48);
+            this.searchBox.Multiline = true;
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(374, 25);
+            this.searchBox.Size = new System.Drawing.Size(374, 32);
             this.searchBox.TabIndex = 6;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.sortComboBox);
-            this.groupBox2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(179, 53);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 59);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Sort by:";
-            // 
-            // sortComboBox
-            // 
-            this.sortComboBox.FormattingEnabled = true;
-            this.sortComboBox.Location = new System.Drawing.Point(29, 22);
-            this.sortComboBox.Name = "sortComboBox";
-            this.sortComboBox.Size = new System.Drawing.Size(150, 27);
-            this.sortComboBox.TabIndex = 4;
-            this.sortComboBox.SelectedIndexChanged += new System.EventHandler(this.sortComboBox_SelectedIndexChanged);
             // 
             // copyButton
             // 
@@ -292,16 +259,18 @@
             this.copyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.copyButton.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.copyButton.ForeColor = System.Drawing.Color.Maroon;
-            this.copyButton.Location = new System.Drawing.Point(531, 425);
+            this.copyButton.Location = new System.Drawing.Point(877, 450);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(108, 34);
-            this.copyButton.TabIndex = 10;
+            this.copyButton.TabIndex = 9;
             this.copyButton.Text = "Copy";
             this.copyButton.UseVisualStyleBackColor = false;
             this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
             // friendslist
             // 
+            this.friendslist.AllowUserToAddRows = false;
+            this.friendslist.AllowUserToDeleteRows = false;
             this.friendslist.AutoGenerateColumns = false;
             this.friendslist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.friendslist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -316,22 +285,13 @@
             this.acquaintanceDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
             this.friendslist.DataSource = this.personBindingSource;
-            this.friendslist.Location = new System.Drawing.Point(20, 141);
+            this.friendslist.Location = new System.Drawing.Point(12, 159);
             this.friendslist.Name = "friendslist";
+            this.friendslist.ReadOnly = true;
             this.friendslist.RowHeadersWidth = 51;
             this.friendslist.RowTemplate.Height = 24;
-            this.friendslist.Size = new System.Drawing.Size(768, 260);
+            this.friendslist.Size = new System.Drawing.Size(790, 325);
             this.friendslist.TabIndex = 42;
-            // 
-            // birthdayTextBox
-            // 
-            this.birthdayTextBox.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.birthdayTextBox.Location = new System.Drawing.Point(190, 407);
-            this.birthdayTextBox.Name = "birthdayTextBox";
-            this.birthdayTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.birthdayTextBox.Size = new System.Drawing.Size(323, 77);
-            this.birthdayTextBox.TabIndex = 9;
-            this.birthdayTextBox.Text = "";
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
@@ -339,6 +299,7 @@
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
             this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
@@ -347,6 +308,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // surnameDataGridViewTextBoxColumn
@@ -355,6 +317,7 @@
             this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
             this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.surnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // dateOfBirthDataGridViewTextBoxColumn
@@ -363,6 +326,7 @@
             this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth";
             this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateOfBirthDataGridViewTextBoxColumn.Width = 125;
             // 
             // addressDataGridViewTextBoxColumn
@@ -371,6 +335,7 @@
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             this.addressDataGridViewTextBoxColumn.Width = 125;
             // 
             // phoneNumberDataGridViewTextBoxColumn
@@ -379,6 +344,7 @@
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.phoneNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // placeOfWorkOrStudyDataGridViewTextBoxColumn
@@ -387,6 +353,7 @@
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn.HeaderText = "PlaceOfWorkOrStudy";
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn.Name = "placeOfWorkOrStudyDataGridViewTextBoxColumn";
+            this.placeOfWorkOrStudyDataGridViewTextBoxColumn.ReadOnly = true;
             this.placeOfWorkOrStudyDataGridViewTextBoxColumn.Width = 125;
             // 
             // positionDataGridViewTextBoxColumn
@@ -395,6 +362,7 @@
             this.positionDataGridViewTextBoxColumn.HeaderText = "Position";
             this.positionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.positionDataGridViewTextBoxColumn.Name = "positionDataGridViewTextBoxColumn";
+            this.positionDataGridViewTextBoxColumn.ReadOnly = true;
             this.positionDataGridViewTextBoxColumn.Width = 125;
             // 
             // acquaintanceDataGridViewTextBoxColumn
@@ -403,6 +371,7 @@
             this.acquaintanceDataGridViewTextBoxColumn.HeaderText = "Acquaintance";
             this.acquaintanceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.acquaintanceDataGridViewTextBoxColumn.Name = "acquaintanceDataGridViewTextBoxColumn";
+            this.acquaintanceDataGridViewTextBoxColumn.ReadOnly = true;
             this.acquaintanceDataGridViewTextBoxColumn.Width = 125;
             // 
             // dateDataGridViewTextBoxColumn
@@ -411,25 +380,78 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateDataGridViewTextBoxColumn.Width = 125;
             // 
             // personBindingSource
             // 
             this.personBindingSource.DataSource = typeof(notebook.Person);
             // 
+            // birthdayTextBox
+            // 
+            this.birthdayTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.birthdayTextBox.Location = new System.Drawing.Point(816, 40);
+            this.birthdayTextBox.Name = "birthdayTextBox";
+            this.birthdayTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.birthdayTextBox.Size = new System.Drawing.Size(224, 387);
+            this.birthdayTextBox.TabIndex = 8;
+            this.birthdayTextBox.Text = "";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dateSortButton);
+            this.groupBox2.Controls.Add(this.alphabetSortButton);
+            this.groupBox2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.Location = new System.Drawing.Point(158, 40);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(237, 113);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Sort by:";
+            // 
+            // dateSortButton
+            // 
+            this.dateSortButton.BackColor = System.Drawing.Color.Pink;
+            this.dateSortButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dateSortButton.Font = new System.Drawing.Font("Bookman Old Style", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateSortButton.ForeColor = System.Drawing.Color.Maroon;
+            this.dateSortButton.Location = new System.Drawing.Point(52, 68);
+            this.dateSortButton.Name = "dateSortButton";
+            this.dateSortButton.Size = new System.Drawing.Size(154, 39);
+            this.dateSortButton.TabIndex = 4;
+            this.dateSortButton.Text = "Last edit date";
+            this.dateSortButton.UseVisualStyleBackColor = false;
+            this.dateSortButton.Click += new System.EventHandler(this.dateSortButton_Click);
+            // 
+            // alphabetSortButton
+            // 
+            this.alphabetSortButton.BackColor = System.Drawing.Color.Pink;
+            this.alphabetSortButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.alphabetSortButton.Font = new System.Drawing.Font("Bookman Old Style", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.alphabetSortButton.ForeColor = System.Drawing.Color.Maroon;
+            this.alphabetSortButton.Location = new System.Drawing.Point(52, 22);
+            this.alphabetSortButton.Name = "alphabetSortButton";
+            this.alphabetSortButton.Size = new System.Drawing.Size(154, 40);
+            this.alphabetSortButton.TabIndex = 3;
+            this.alphabetSortButton.Text = "Alphabet";
+            this.alphabetSortButton.UseVisualStyleBackColor = false;
+            this.alphabetSortButton.Click += new System.EventHandler(this.alphabetSortButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
-            this.ClientSize = new System.Drawing.Size(800, 496);
+            this.ClientSize = new System.Drawing.Size(1062, 496);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.birthdayTextBox);
             this.Controls.Add(this.friendslist);
             this.Controls.Add(this.copyButton);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip);
+            this.MaximumSize = new System.Drawing.Size(1080, 543);
+            this.MinimumSize = new System.Drawing.Size(1080, 543);
             this.Name = "MainForm";
             this.Text = "Notebook";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -440,9 +462,9 @@
             this.menuStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.friendslist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,13 +491,9 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox sortComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastAddedDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button copyButton;
         private System.Windows.Forms.BindingSource personBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView friendslist;
         private System.Windows.Forms.RichTextBox birthdayTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -491,5 +509,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem viewInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button dateSortButton;
+        private System.Windows.Forms.Button alphabetSortButton;
     }
 }

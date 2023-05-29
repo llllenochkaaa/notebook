@@ -287,6 +287,8 @@
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.txtName);
+            this.MaximumSize = new System.Drawing.Size(665, 668);
+            this.MinimumSize = new System.Drawing.Size(665, 668);
             this.Name = "EditFriend";
             this.Text = "Edit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditFriend_FormClosing);

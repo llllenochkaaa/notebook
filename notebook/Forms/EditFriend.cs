@@ -32,19 +32,17 @@ namespace notebook.Forms
             txtPlaceOfWorkOrStudy.Text = person.PlaceOfWorkOrStudy;
             txtPosition.Text = person.Position;
             txtAcquaintance.Text = person.Acquaintance;
-
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
-        private bool isCancelConfirmed = false;
+        private bool isEditingCancelled = false;
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure that you want to cancel editing this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                isCancelConfirmed = true;
-                this.DialogResult = DialogResult.Cancel;
+                isEditingCancelled = true;
+                this.Close();
             }
         }
 
@@ -70,7 +68,7 @@ namespace notebook.Forms
 
             if (!Validator.ValidateLastName(txtLastName.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot contain numbers and cannot be longer than 50 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -82,7 +80,7 @@ namespace notebook.Forms
 
             if (!Validator.ValidateName(txtName.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot contain numbers and cannot be longer than 50 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -94,7 +92,7 @@ namespace notebook.Forms
 
             if (!Validator.ValidateSurname(txtSurname.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot contain numbers and cannot be longer than 50 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -118,7 +116,7 @@ namespace notebook.Forms
 
             if (!Validator.ValidateAddress(txtAddress.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot be longer than 100 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -142,7 +140,7 @@ namespace notebook.Forms
 
             if (!Validator.ValidatePlaceOfWorkOrStudy(txtPlaceOfWorkOrStudy.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot be longer than 100 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -154,7 +152,7 @@ namespace notebook.Forms
 
             if (!Validator.ValidatePosition(txtPosition.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot be longer than 100 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -166,7 +164,7 @@ namespace notebook.Forms
 
             if (!Validator.ValidateAcquaintance(txtAcquaintance.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot be longer than 100 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -186,13 +184,9 @@ namespace notebook.Forms
                 return;
             }
 
-            isSaveConfirmed = true;
-
             DialogResult = DialogResult.OK;
             MessageBox.Show("The data has been successfully edited!", "Success", MessageBoxButtons.OK);
         }
-
-        private bool isSaveConfirmed = false;
 
         private void EditFriend_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -200,21 +194,13 @@ namespace notebook.Forms
             {
                 Person.Date = DateTime.Now;
             }
-
-            if (isCancelConfirmed)
+            else if (DialogResult == DialogResult.Cancel && !isEditingCancelled)
             {
-                return;
-            }
-
-            if (isSaveConfirmed)
-            {
-                return;
-            }
-
-            DialogResult result = MessageBox.Show("Are you sure that you want to cancel editing this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.No)
-            {
-                e.Cancel = true;
+                DialogResult result = MessageBox.Show("Are you sure that you want to cancel editing this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }
