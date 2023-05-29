@@ -246,7 +246,7 @@
             // searchBox
             // 
             this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchBox.Location = new System.Drawing.Point(7, 48);
+            this.searchBox.Location = new System.Drawing.Point(6, 48);
             this.searchBox.Multiline = true;
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(374, 32);

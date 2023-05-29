@@ -29,6 +29,7 @@ namespace notebook
             InitializeComponent();
 
             listoffriends = new ListOfFriends();
+            filteredFriends = new List<Person>();
 
             personBindingSource.DataSource = listoffriends.Persons;
 
@@ -48,11 +49,22 @@ namespace notebook
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataAccess.Load(listoffriends);
-            personBindingSource.ResetBindings(true);
-            personBindingSource.DataSource = listoffriends.Persons;
+            DialogResult result = MessageBox.Show("Do you want to load previous data? This will overwrite any unsaved changes.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            UpdateBirthdayMessage();
+            if (result == DialogResult.Yes)
+            {
+                DataAccess.Load(listoffriends);
+                personBindingSource.ResetBindings(true);
+                personBindingSource.DataSource = listoffriends.Persons;
+
+                UpdateBirthdayMessage();
+            }
+
+            //DataAccess.Load(listoffriends);
+            //personBindingSource.ResetBindings(true);
+            //personBindingSource.DataSource = listoffriends.Persons;
+
+            //UpdateBirthdayMessage();
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,6 +72,8 @@ namespace notebook
             if (MessageBox.Show("Are you sure that you want to clear your friends list?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 listoffriends.Persons.Clear();
+
+                personBindingSource.Clear();
 
                 personBindingSource.ResetBindings(false);
 
@@ -102,8 +116,12 @@ namespace notebook
                 var selectedPerson = personBindingSource.Current as Person;
                 if (selectedPerson != null)
                 {
+                    filteredFriends.Remove(selectedPerson);
                     listoffriends.Persons.Remove(selectedPerson);
-                    personBindingSource.ResetBindings(true);
+                    personBindingSource.ResetBindings(false);
+
+                    //listoffriends.Persons.Remove(selectedPerson);
+                    //personBindingSource.ResetBindings(true);
                     listoffriends.IsDirty = true;
 
                     UpdateBirthdayMessage();
@@ -165,16 +183,23 @@ namespace notebook
             }
         }
 
+        private List<Person> filteredFriends;
+
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            List<Person> result = listoffriends.SearchFriends(searchBox.Text.ToLower());
-            personBindingSource.DataSource = result;
+            filteredFriends = listoffriends.SearchFriends(searchBox.Text.ToLower());
+            personBindingSource.DataSource = filteredFriends;
+            personBindingSource.ResetBindings(false);
+
+            //List<Person> result = listoffriends.SearchFriends(searchBox.Text.ToLower());
+            //personBindingSource.DataSource = result;
+            //personBindingSource.ResetBindings(false);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            listoffriends = new ListOfFriends();
             DataAccess.Load(listoffriends);
+            personBindingSource.ResetBindings(true);
             personBindingSource.DataSource = listoffriends.Persons;
 
             friendslist.ClearSelection();
@@ -183,6 +208,16 @@ namespace notebook
             birthdayTextBox.ReadOnly = true;
 
             UpdateBirthdayMessage();
+            //listoffriends = new ListOfFriends();
+            //DataAccess.Load(listoffriends);
+            //personBindingSource.DataSource = listoffriends.Persons;
+
+            //friendslist.ClearSelection();
+            //friendslist.AllowUserToAddRows = false;
+
+            //birthdayTextBox.ReadOnly = true;
+
+            //UpdateBirthdayMessage();
         }
 
         public static string CheckBirthdays(ListOfFriends listOfFriends)
