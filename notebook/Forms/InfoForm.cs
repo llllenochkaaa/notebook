@@ -25,11 +25,6 @@ namespace notebook.Forms
 
             Person = person;
 
-            //foreach (var textBox in Controls.OfType<TextBox>())
-            //{
-            //    textBox.ReadOnly = true;
-            //}
-
             txtLastName.Text = person.LastName;
             txtName.Text = person.Name;
             txtSurname.Text = person.Surname;
