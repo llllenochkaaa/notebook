@@ -175,18 +175,28 @@ namespace notebook
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Do you want to add this person to the friends list?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            DialogResult confirmationResult = MessageBox.Show("Do you want to add this person to the friends list?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmationResult == DialogResult.No)
             {
-                MessageBox.Show("A new friend has been successfully added!", "Success", MessageBoxButtons.OK);
-                this.DialogResult = DialogResult.OK;
+                return;
             }
+
+            isSaveConfirmed = true;
+
+            DialogResult = DialogResult.OK;
+            MessageBox.Show("A new friend has been successfully added!", "Success", MessageBoxButtons.OK);
         }
+
+        private bool isSaveConfirmed = false;
 
         private void AddFriend_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isCancelConfirmed)
+            {
+                return;
+            }
+
+            if (isSaveConfirmed)
             {
                 return;
             }

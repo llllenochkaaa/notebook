@@ -83,12 +83,15 @@ namespace notebook
             }
         }
 
+        private bool shouldExit;
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure that you want to exit the program?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                shouldExit = true;
                 Close();
             }
         }
@@ -138,25 +141,21 @@ namespace notebook
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!listoffriends.IsDirty)
+            if (listoffriends.IsDirty)
             {
-                return;
+                var saveChangesResult = MessageBox.Show("Do you want to save changes?", "Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                switch (saveChangesResult)
+                {
+                    case DialogResult.Yes:
+                        DataAccess.Save(listoffriends);
+                        break;
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        return;
+                }
             }
 
-            var res = MessageBox.Show("Do you want to save changes?", "Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            switch (res)
-            {
-                case DialogResult.Yes:
-                    DataAccess.Save(listoffriends);
-                    break;
-                case DialogResult.No:
-                    break;
-                case DialogResult.Cancel:
-                    e.Cancel = true;
-                    break;
-            }
-
-            if (!e.Cancel)
+            if (!shouldExit)
             {
                 DialogResult exitResult = MessageBox.Show("Are you sure that you want to exit the program?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
