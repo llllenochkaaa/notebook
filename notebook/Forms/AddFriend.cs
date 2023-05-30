@@ -63,7 +63,7 @@ namespace notebook
 
             if (!Validator.ValidateLastName(txtLastName.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot contain numbers and cannot be longer than 50 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -75,7 +75,7 @@ namespace notebook
 
             if (!Validator.ValidateName(txtName.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot contain numbers and cannot be longer than 50 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -87,7 +87,7 @@ namespace notebook
 
             if (!Validator.ValidateSurname(txtSurname.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot contain numbers and cannot be longer than 50 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -111,7 +111,7 @@ namespace notebook
 
             if (!Validator.ValidateAddress(txtAddress.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot be longer than 100 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -135,7 +135,7 @@ namespace notebook
 
             if (!Validator.ValidatePlaceOfWorkOrStudy(txtPlaceOfWorkOrStudy.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot be longer than 100 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -147,7 +147,7 @@ namespace notebook
 
             if (!Validator.ValidatePosition(txtPosition.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot be longer than 100 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -159,7 +159,7 @@ namespace notebook
 
             if (!Validator.ValidateAcquaintance(txtAcquaintance.Text))
             {
-                MessageBox.Show("Enter the data correctly", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This field cannot be longer than 100 letters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
