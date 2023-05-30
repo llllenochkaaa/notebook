@@ -42,7 +42,7 @@ namespace notebook.Forms
             if (result == DialogResult.Yes)
             {
                 isEditingCancelled = true;
-                this.Close();
+                this.DialogResult = DialogResult.Cancel;
             }
         }
 
@@ -184,23 +184,31 @@ namespace notebook.Forms
                 return;
             }
 
+            isSaveConfirmed = true;
+
             DialogResult = DialogResult.OK;
             MessageBox.Show("The data has been successfully edited!", "Success", MessageBoxButtons.OK);
         }
 
+        private bool isSaveConfirmed = false;
+
         private void EditFriend_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (DialogResult == DialogResult.OK)
+            if (isEditingCancelled)
+            {
+                return;
+            }
+
+            if (isSaveConfirmed)
             {
                 Person.Date = DateTime.Now;
+                return;
             }
-            else if (DialogResult == DialogResult.Cancel && !isEditingCancelled)
+
+            DialogResult result = MessageBox.Show("Are you sure that you want to cancel editing this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
             {
-                DialogResult result = MessageBox.Show("Are you sure that you want to cancel editing this person?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
+                e.Cancel = true;
             }
         }
     }
