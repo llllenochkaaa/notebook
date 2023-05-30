@@ -59,12 +59,6 @@ namespace notebook
 
                 UpdateBirthdayMessage();
             }
-
-            //DataAccess.Load(listoffriends);
-            //personBindingSource.ResetBindings(true);
-            //personBindingSource.DataSource = listoffriends.Persons;
-
-            //UpdateBirthdayMessage();
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,8 +114,6 @@ namespace notebook
                     listoffriends.Persons.Remove(selectedPerson);
                     personBindingSource.ResetBindings(false);
 
-                    //listoffriends.Persons.Remove(selectedPerson);
-                    //personBindingSource.ResetBindings(true);
                     listoffriends.IsDirty = true;
 
                     UpdateBirthdayMessage();
@@ -190,10 +182,6 @@ namespace notebook
             filteredFriends = listoffriends.SearchFriends(searchBox.Text.ToLower());
             personBindingSource.DataSource = filteredFriends;
             personBindingSource.ResetBindings(false);
-
-            //List<Person> result = listoffriends.SearchFriends(searchBox.Text.ToLower());
-            //personBindingSource.DataSource = result;
-            //personBindingSource.ResetBindings(false);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -208,16 +196,6 @@ namespace notebook
             birthdayTextBox.ReadOnly = true;
 
             UpdateBirthdayMessage();
-            //listoffriends = new ListOfFriends();
-            //DataAccess.Load(listoffriends);
-            //personBindingSource.DataSource = listoffriends.Persons;
-
-            //friendslist.ClearSelection();
-            //friendslist.AllowUserToAddRows = false;
-
-            //birthdayTextBox.ReadOnly = true;
-
-            //UpdateBirthdayMessage();
         }
 
         public static string CheckBirthdays(ListOfFriends listOfFriends)
