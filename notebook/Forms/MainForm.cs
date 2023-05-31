@@ -117,6 +117,8 @@ namespace notebook
                     listoffriends.IsDirty = true;
 
                     UpdateBirthdayMessage();
+
+                    MessageBox.Show("Friend successfully removed from the list.", "Success", MessageBoxButtons.OK);
                 }
             }
         }
