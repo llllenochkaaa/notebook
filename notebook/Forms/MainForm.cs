@@ -1,21 +1,12 @@
-﻿using System.IO;
-using System.Text.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using notebook.Models;
 using notebook.Data;
-using System.Web.UI.WebControls;
-using DocuSign.eSign.Model;
 using notebook.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using System.Globalization;
 
 namespace notebook

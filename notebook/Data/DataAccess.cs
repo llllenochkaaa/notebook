@@ -1,12 +1,7 @@
 ﻿using notebook.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Text.Json;
-using System.Threading.Tasks;
-using notebook.Data;
 
 namespace notebook.Data
 {
