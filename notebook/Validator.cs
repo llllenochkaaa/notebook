@@ -46,7 +46,7 @@ namespace notebook
 
         public static bool ValidateDateOfBirth(string dateOfBirthString)
         {
-            string[] formats = { "dd/MM/yy", "dd/MM/yyyy" };
+            string[] formats = { "dd/MM/yyyy" };
             DateTime dateOfBirth;
 
             if (DateTime.TryParseExact(dateOfBirthString, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out dateOfBirth))

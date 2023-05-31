@@ -89,7 +89,7 @@ namespace notebook
 
             if (!Validator.ValidateDateOfBirth(dtpDateOfBirth.Text))
             {
-                MessageBox.Show("Enter the correct date of birth in DD/MM/YY or DD/MM/YYYY format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Enter the correct date of birth in DD/MM/YYYY format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
