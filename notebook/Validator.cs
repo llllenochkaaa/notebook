@@ -48,7 +48,19 @@ namespace notebook
         {
             string[] formats = { "dd/MM/yy", "dd/MM/yyyy" };
             DateTime dateOfBirth;
-            return DateTime.TryParseExact(dateOfBirthString, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out dateOfBirth);
+
+            if (DateTime.TryParseExact(dateOfBirthString, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out dateOfBirth))
+            {
+                DateTime currentDate = DateTime.Today;
+                DateTime minimumDate = new DateTime(1900, 1, 1);
+
+                if (dateOfBirth <= currentDate && dateOfBirth >= minimumDate)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public static bool ValidatePhoneNumber(string phoneNumber)
